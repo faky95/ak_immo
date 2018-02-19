@@ -1,0 +1,7 @@
+ak_immobilier:
+    resource: "@AKImmobilierBundle/Resources/config/routing.yml"
+    prefix:   /front
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

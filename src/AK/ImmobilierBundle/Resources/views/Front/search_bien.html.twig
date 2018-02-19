@@ -1,0 +1,48 @@
+<<<<<<< HEAD
+
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+<div class="container">
+<h1 style="text-align:center;margin-top:10px;"> Voici la liste des Biens </h1>
+<div class="col-12 ">
+
+<table border="2" >
+<tr>
+
+<th>nom</th>
+<th>prix</th>
+<th>description</th>
+<th>etat</th>
+
+</tr>
+{%for bien in biens %}
+<tr>
+
+<td>{{bien.nombien}}</td>
+<td>{{bien.prixlocation }}</td>
+<td>{{bien.description}}</td>
+
+<td>{{bien.etat}}</td>
+
+</tr>
+
+
+{%endfor%}
+</table>
+</div>
+
+</div>
+
+
+{% endblock %}
+=======
+{% extends "::base.html.twig" %}
+
+{% block title %}AKImmobilierBundle:Front:searchBien{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Front:searchBien page</h1>
+{% endblock %}
+>>>>>>> 54fad57818febd2e162c94e798b03fbe272cecff

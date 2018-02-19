@@ -1,0 +1,44 @@
+ {% extends '@AKImmobilier/layout.html.twig' %}
+
+{% block style %}
+    <style>
+        h1{
+            text-align:center;    
+        }
+    </style>   
+{% endblock %}
+
+{% block main %}
+<div class="contact-us container">
+            <div class="row">
+                <div class="contact-form span6">
+                    <p><h1>INSCRIPTION</h1></p>
+                    <form method="post" action="assets/sendmail.php">
+                        <label for="name" class="nameLabel">Name</label>
+                          <input id="name" type="text" name="name" placeholder="Enter your name...">
+                        <label for="email" class="emailLabel">Email</label>
+                          <input id="email" type="text" name="email" placeholder="Enter your email...">
+                        <label for="password">Password</label>
+                          <input id="password" type="password" name="password" placeholder="Your password...">
+                         {# <label for="message" class="messageLabel">Message</label> #}
+                          {# <textarea id="message" name="message" placeholder="Your message..."></textarea> #} 
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+                <div class="contact-form span6">
+                <p><h1>AUTHENTIFICATION<h1></p>
+                    <form method="post" action="assets/sendmail.php">
+                        <label for="name" class="nameLabel">Username/Email</label>
+                          <input id="name" type="text" name="name" placeholder="Enter your username/password...">
+                        {# <label for="email" class="emailLabel">Email</label>
+                          <input id="email" type="text" name="email" placeholder="Enter your email..."> #}
+                        <label for="subject">Password</label>
+                          <input id="password" type="password" name="password" placeholder="Your password...">
+                         {# <label for="message" class="messageLabel">Message</label> #}
+                          {# <textarea id="message" name="message" placeholder="Your message..."></textarea> #} 
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+</div>   
+{% endblock %} 

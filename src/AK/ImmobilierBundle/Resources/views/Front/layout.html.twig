@@ -1,0 +1,252 @@
+{% extends "::base.html.twig" %}
+{% block styles %}
+    <style>
+        .slogan{
+            font-size: 20px;
+            position: relative;
+            top: 30px;
+            right: 250px;
+        }
+    </style>
+{% endblock %}
+{% block header %}
+    <!-- Header -->
+    <div class="container">
+        <div class="header row">
+            <div class="span12">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <h1>
+                            <span class="violet">AK1/2 IMMO </span>
+                            <span class="slogan"> trouver votre futur logement</span>
+                        </h1>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right">
+                                <li class="current-page">
+                                    <a href=""><i class="icon-home"></i><br />ACCUEIL</a>
+                                 </li>
+                                 <li>
+                                    <a href=""><i class="icon-camera"></i><br />Portfolio</a>
+                                </li> 
+                                {# <li>
+                                    <a href="{{asset('services.html')}}"><i class="icon-tasks"></i><br />RESERVATION</a>
+                                </li> #}
+                                    <li>
+                                    <a href="{# {{path('contact_path')}} #}"><i class="icon-envelope-alt"></i><br />Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block main %}
+    <!-- Slider -->
+    {% block slide %}
+    <div class="slider">
+        <div class="container">
+            <div class="row">
+                <div class="span10 offset1">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            {# <li data-thumb="{{asset('assets/img/photo/01.jpg')}}" style="height:0px">
+                                <img src="{{asset('assets/img/photo/01.jpg')}}" style="height:550px">
+                                <p class="flex-caption">Maison meuble avec 2 chambres ,une cuisine, un salon, un bureau, une piscine et un jardin en Rez de chaussée.Quatre chambre avec salle de bain un salon de the, deux toilettes publiques.</p>
+                            </li> #}
+                             <li data-thumb="{{asset('assets/img/photo/maison.jpg')}}" style="height:0px">
+                                <img src="{{asset('assets/img/photo/maison.jpg')}}" style="height:550px">
+                                <p class="flex-caption">Maison meublée avec 2 chambres ,une cuisine, un salon, un bureau, une piscine et un jardin en Rez de chaussée.Quatre chambre avec salle de bain un salon de the, deux toilettes publiques.</p>
+                            </li>
+                            <li data-thumb="{{asset('assets/img/photo/02.jpg')}}">
+                                <img src="{{asset('assets/img/photo/02.jpg')}}" style="height:550px">
+                                {# <p class="flex-caption">Studio avec une chambreavec salle de bain , un salon, une cuisine</p> #}
+                            </li>
+                            <li data-thumb="{{asset('assets/img/photo/03.jpg')}}">
+                                <img src="{{asset('assets/img/photo/03.jpg')}}" style="height:550px">
+                                <p class="flex-caption">Studio avec une chambreavec salle de bain , un salon, une cuisine.</p>
+                            </li>
+                            <li data-thumb="{{asset('assets/img/photo/07.jpg')}}">
+                                <img src="{{asset('assets/img/photo/07.jpg')}}" style="height:550px">
+                                <p class="flex-caption">Studio avec une chambreavec salle de bain , un salon, une cuisine</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block plus %}
+    {% endblock %}
+    {% endblock %}
+
+    <!-- Site Description -->
+    <div class="presentation container">
+        <h2>AVEC <span class="violet">AK1/2 IMMO</span>, trouver votre futur logement.</h2>
+        <p>Votre maison on la vois comme vous.</p>
+        <!-- partie recherche -->
+    </div>
+    <!-- Content -->
+    <main class="main">
+      <!-- Promo Block -->
+      <div class="g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-cover g-bg-black-opacity-0_3--after g-py-100" style="background-image: url(assets/img-temp/1920x1080/img1.jpg);">
+        <div class="container g-pos-rel g-z-index-1">
+          <div class="g-mb-20">
+            <h1 class="g-color-white g-font-size-40 mb-0">Trouver un Logement</h1>
+          </div>
+
+          <div class="g-bg-white g-pa-30"style="margin-top:50px;">
+            <!-- Input Group -->
+            <form method="post" > 
+            <div class="row" style="display:flex;margin-left:200px">
+                <div class="col-lg-3">
+                      <input name="localite"class="col-lg-3 form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="Search by City ...">
+                </div>
+                {# <div class="col-lg-3 "style="margin-left:30px;">
+                      <select>
+                        {% for type in types %}
+                        <option value=""> {{type.libelle}} </option>
+                        {% endfor %}
+                     </select> 
+                </div> #}
+                <div class="col-lg-3" style="margin-left:30px;">
+                     <input name="prixlocation"class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="Budget">
+                </div>
+                <div class="col-lg-3 bg-primary"style="margin-left:30px;">
+                    <input name="search"value="SEARCH"  style="width:100px; height:30px; margin-bottom:12px" type="submit">
+                  
+                </div>
+            </div>
+       
+            </form>
+            
+          </div>
+           <div class="row">
+          
+           
+           <table border="2" >
+<tr>
+
+<th>nom</th>
+<th>prix</th>
+<th>description</th>
+<th>etat</th>
+
+</tr>
+{% for bien in biens %}
+<tr>
+
+<td>{{bien.nombien}}</td>
+<td>{{bien.prixlocation }}</td>
+<td>{{bien.description}}</td>
+{% if bien.etat == false %}
+<td> <a href="{{path('etat',{'id':bien.id})}}">libre</a> </td>
+{% else %}
+<td> <a href="{{path('etat',{'id':bien.id})}}">occupé</a> </td>
+{% endif %}
+
+</tr>
+
+
+{% endfor %}
+</table>
+</div>   
+     
+     {# <!-- Portfolio -->
+             <div class="portfolio portfolio-page container"id="portfolio">
+           
+                <div class="row">
+                    <ul class="portfolio-img" style="heigth:50px">
+                        <li data-id="p-1" data-type="web-design" class="span3">
+                            <div class="work">
+                                <a href="{{asset('assets/img/photo/08.jpg')}}" rel="prettyPhoto">
+                                    <img src="{{asset('assets/img/photo/08.jpg')}}" alt="">
+                                </a>
+                                <h4>{{bien.nombien}}</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                <button><span class="violet">RESERVER</span></button>
+                            </div>
+                        </li>
+                        <li data-id="p-2" data-type="logo-design" class="span3">
+                            <div class="work">
+                                <a href="{{asset('assets/img/photo/08.jpg')}}" rel="prettyPhoto">
+                                    <img src="{{asset('assets/img/photo/08.jpg')}}" alt="">
+                                </a>
+                                <h4>Appartement Meublé</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                <button><span class="violet">RESERVER</span></button>
+                            </div>
+                        </li>
+                        <li data-id="p-3" data-type="print-design" class="span3">
+                            <div class="work">
+                                <a href="{{asset('assets/img/photo/08.jpg')}}" rel="prettyPhoto">
+                                    <img src="{{asset('assets/img/photo/08.jpg')}}" alt="">
+                                </a>
+                                <h4>Studiot Meublé</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                <button><span class="violet">RESERVER</span></button>
+                                </div>
+                        </li>
+                        <li data-id="p-4" data-type="web-design" class="span3">
+                            <div class="work">
+                                <a href="{{asset('assets/img/photo/08.jpg')}}" rel="prettyPhoto">
+                                    <img src="{{asset('assets/img/photo/08.jpg')}}" alt="">
+                                </a>
+                                <h4>Maison meublée</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                <button><span class="violet">RESERVER</span></button>
+                            </div>
+                        </li>
+                        <li data-id="p-5" data-type="logo-design" class="span3">
+                            <div class="work">
+                                <a href="{{asset('assets/img/photo/08.jpg')}}" rel="prettyPhoto">
+                                    <img src="{{asset('assets/img/photo/08.jpg')}}" alt="">
+                                </a>
+                                <h4>Appartement non Meublé</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                <button><span class="violet">RESERVER</span></button>
+                            </div>
+                        </li>
+                        <li data-id="p-6" data-type="print-design" class="span3">
+                            <div class="work" style="heigth:50px">
+                                <a href="{{asset('assets/img/photo/08.jpg')}}" rel="prettyPhoto">
+                                    <img src="{{asset('assets/img/photo/08.jpg')}}" alt="">
+                                </a>
+                                <h4>Studiot Meublé</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                <button><span class="violet">RESERVER</span></button>
+                            </div>
+                        </li>
+                        <li data-id="p-7" data-type="web-design" class="span3">
+                            <div class="work">
+                                <a href="{{asset('assets/img/photo/08.jpg')}}" rel="prettyPhoto">
+                                    <img src="{{asset('assets/img/photo/08.jpg')}}" alt="">
+                                </a>
+                                <h4>Maison avec espace de jeu </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                <button><span class="violet">RESERVER</span></button>
+                            </div>
+                        </li>
+                        <li data-id="p-8" data-type="print-design" class="span3">
+                            <div class="work">
+                                <a href="{{asset('assets/img/photo/08.jpg')}}" rel="prettyPhoto">
+                                    <img src="{{asset('assets/img/photo/08.jpg')}}" alt="">
+                                </a>
+                                <h4>Studiot non Meublé</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                <button><span class="violet">RESERVER</span></button>
+                            </div>
+                        </li>
+                  
+                        
+                    </ul>
+                </div>
+               #}
+            
+{% endblock %}
