@@ -1,0 +1,44 @@
+
+
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+<div class="container">
+<h1 style="text-align:center;margin-top:10px;"> Voici la liste des Biens </h1>
+<div class="col-12 ">
+
+<table border="2" >
+<tr>
+
+<th>id</th>
+<th>image</th>
+<th>bien</th>
+
+</tr>
+{%for image in images %}
+<tr>
+{{image.image }}
+<td>{{image.id}}</td>
+<td><img src="{{asset('assets/img/photo/'~image.image) }}" class="img"> </td>
+<td>{{image.bien}}</td>
+<style>
+.img
+{
+    width:200px;
+}
+</style>
+
+
+</tr>
+
+
+{%endfor%}
+</table>
+</div>
+
+</div>
+
+
+{% endblock %}
+

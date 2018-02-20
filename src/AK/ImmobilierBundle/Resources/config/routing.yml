@@ -1,42 +1,21 @@
 ak_immobilier_homepage:
-<<<<<<< HEAD
+
     path:     /front
-    defaults: { _controller: AKImmobilierBundle:Front:viewBien  }
+    defaults: { _controller: AKImmobilierBundle:Front:viewBien }
 
-etat:
-    path:     /front/{id}
-    defaults: { _controller: AKImmobilierBundle:Front:etatBien }
-    requirements: 
-        id: \d+ 
+  
 
 
+# etat:
+#     path:     /front/{id}
+#     defaults: { _controller: AKImmobilierBundle:Front:etatBien }
+#     requirements: 
+#         id: \d+
+#     path:     /
+#     defaults: { _controller: AKImmobilierBundle:Default:index }
 
 
-=======
-    path:     /
-    defaults: { _controller: AKImmobilierBundle:Default:index }
-
-<<<<<<< HEAD
-# portfolio:
-#     path:     /portfolio
-#     defaults: { _controller: "AKImmobilierBundle:Default:portfolio" }
 
 
-reserver:
-    path:     /reserver
-    defaults: { _controller: "AKImmobilierBundle:Default:reserver" }
-=======
-portfolio:
-    path:     /portfolio
-    defaults: { _controller: "AKImmobilierBundle:Default:portfolio" }
 
-search_bien:
-    path:     /bien/search
-    defaults: { _controller: "AKImmobilierBundle:Front:searchBien" }
-
-reserve_bien:
-    path:     /bien/reservation
-    defaults: { _controller: "AKImmobilierBundle:Front:reserveBien" }
     
->>>>>>> d9dbb9b9dad4dd10ffbe585d9081064e20999eda
->>>>>>> 54fad57818febd2e162c94e798b03fbe272cecff

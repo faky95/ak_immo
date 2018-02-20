@@ -474,4 +474,15 @@ class Bien extends \AK\ImmobilierBundle\Entity\Bien implements \Doctrine\ORM\Pro
         return parent::getReservations();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
+    }
+
 }

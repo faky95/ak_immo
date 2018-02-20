@@ -1,9 +1,0 @@
-<?php return array (
-<<<<<<< HEAD:var/cache/dev/pools/9-UY345mqe/D/I/sfjMcAWern5NfOotbWz3
-  0 => 9223372036854775807,
-  1 => 1519032093,
-=======
-  0 => 2147483647,
-  1 => 1518686622,
->>>>>>> d9dbb9b9dad4dd10ffbe585d9081064e20999eda:var/cache/dev/pools/9-UY345mqe/1/N/W9UbFMWpQ4fMMtUBxtR5
-);

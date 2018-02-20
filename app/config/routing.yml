@@ -1,6 +1,6 @@
 ak_immobilier:
     resource: "@AKImmobilierBundle/Resources/config/routing.yml"
-    prefix:   /front
+    prefix:   
 
 app:
     resource: '@AppBundle/Controller/'

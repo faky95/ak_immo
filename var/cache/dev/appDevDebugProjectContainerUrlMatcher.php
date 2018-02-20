@@ -115,37 +115,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         elseif (0 === strpos($pathinfo, '/front')) {
             // ak_immobilier_homepage
-<<<<<<< HEAD
             if ('/front' === $pathinfo) {
                 return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::viewBienAction',  '_route' => 'ak_immobilier_homepage',);
             }
 
-            // etat
-            if (preg_match('#^/front/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'etat')), array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::etatBienAction',));
-=======
-            if ('/front' === $trimmedPathinfo) {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'ak_immobilier_homepage');
-                }
-
-                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\DefaultController::indexAction',  '_route' => 'ak_immobilier_homepage',);
-            }
-
-            // reserver
-            if ('/front/reserver' === $pathinfo) {
-                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\DefaultController::reserverAction',  '_route' => 'reserver',);
-            }
-
-            // search_bien
-            if ('/front/bien/search' === $pathinfo) {
-                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::searchBienAction',  '_route' => 'search_bien',);
-            }
-
-            // reserve_bien
-            if ('/front/bien/reservation' === $pathinfo) {
-                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::reserveBienAction',  '_route' => 'reserve_bien',);
->>>>>>> 54fad57818febd2e162c94e798b03fbe272cecff
+            // typeBien
+            if ('/front/type' === $pathinfo) {
+                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::typeBienAction',  '_route' => 'typeBien',);
             }
 
         }

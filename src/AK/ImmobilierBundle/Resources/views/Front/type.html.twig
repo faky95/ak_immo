@@ -1,4 +1,10 @@
-{% extends "::base.html.twig" %}
+    <select>
+        {% for type in types %}
+            <option value=""> {{type.libelle}} </option>
+        {% endfor %}
+    </select> 
+
+                     {# {% extends "::base.html.twig" %}
 
 {% block title %}Formulaire{% endblock %}
 
@@ -8,4 +14,4 @@
 {{form(form)}}
 </form>
 
-{% endblock %}
+{% endblock %} #}

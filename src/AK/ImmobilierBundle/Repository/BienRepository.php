@@ -10,5 +10,89 @@ namespace AK\ImmobilierBundle\Repository;
  */
 class BienRepository extends \Doctrine\ORM\EntityRepository
 {
+   
+    public function getLocalite()
+    {
+        $em=$this->getEntityManager()->createQueryBuilder();
+        $dql=$em->select('b','l')
+        ->from('AKImmoblierBundle:Bien','b')
+        ->leftJoin('b.localite','l')
+        ->where('b.localite = l.nomlocalite')
+        //->setParameter()
+        ->getQuery();
+        return $dql->getResult();
+    }
+    public function getType()
+    {
+        $em=$this->getEntityManager()->createQueryBuilder();
+        $dql=$em->select('b','t')
+        ->from('AKImmoblierBundle:Bien','b')
+        ->leftJoin('b.typebien','t')
+        ->where('b.typebien = t.libelle')
+        //->setParameter()
+        ->getQuery();
+        return $dql->getResult();
+    }
+
+    public function findImage()
+    {
+        $em=$this->getEntityManager()->createQueryBuilder();
+        $dql=$em->select('b','i')
+        ->from('AKImmoblierBundle:Bien','b')
+        ->leftJoin('i.bien','b')
+        ->where('i.bien = b.id')
+        //->setParameters()
+        ->getQuery();
+        $image=$dql->getImages();
+        return $image->getResult();
+    }
+   // SELECT image FROM bien b,image i WHERE i.bien_id=b.id
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

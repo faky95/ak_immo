@@ -435,4 +435,9 @@ class Bien
     {
         return $this->reservations;
     }
+    //  public function __toString()
+    // {
+    //     return $this->nombien;
+    // }
 }
+ 

@@ -112,4 +112,8 @@ class Localite
     {
         return $this->biens;
     }
+    public function __toString()
+    {
+        return $this->nomlocalite;
+    }
 }

@@ -24,7 +24,7 @@ class Image
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="blob")
+     * @ORM\Column(name="image", type="string")
      */
     private $image;
       /**
@@ -98,4 +98,5 @@ class Image
     {
         return $this->bien;
     }
+  
 }

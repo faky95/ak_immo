@@ -108,13 +108,9 @@
                 <div class="col-lg-3">
                       <input name="localite"class="col-lg-3 form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="Search by City ...">
                 </div>
-                {# <div class="col-lg-3 "style="margin-left:30px;">
-                      <select>
-                        {% for type in types %}
-                        <option value=""> {{type.libelle}} </option>
-                        {% endfor %}
-                     </select> 
-                </div> #}
+                <div class="col-lg-3 "style="margin-left:30px;">
+                 
+                </div>  
                 <div class="col-lg-3" style="margin-left:30px;">
                      <input name="prixlocation"class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="Budget">
                 </div>
@@ -136,20 +132,43 @@
 <th>nom</th>
 <th>prix</th>
 <th>description</th>
-<th>etat</th>
+<th>localite</th>
+<th>typebien</th>
+<th>Image</th>
+
 
 </tr>
 {% for bien in biens %}
+
 <tr>
+
 
 <td>{{bien.nombien}}</td>
 <td>{{bien.prixlocation }}</td>
 <td>{{bien.description}}</td>
-{% if bien.etat == false %}
+<td>{{bien.localite}}</td>
+<td>{{bien.typebien}}</td>
+ <td>
+    
+ {% for image in bien.images %}
+ {# {{image.image}} #}
+   <img src="{{asset('assets/img/photo/'~image.image)}}"class="img">
+
+{% endfor %}
+
+ </td> 
+ <style>
+ .img
+ {
+     width:200px;
+ }
+ </style>
+
+{# {% if bien.etat == false %}
 <td> <a href="{{path('etat',{'id':bien.id})}}">libre</a> </td>
 {% else %}
 <td> <a href="{{path('etat',{'id':bien.id})}}">occupé</a> </td>
-{% endif %}
+{% endif %} #}
 
 </tr>
 

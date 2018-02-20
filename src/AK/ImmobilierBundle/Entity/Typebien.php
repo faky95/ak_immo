@@ -112,4 +112,8 @@ class Typebien
     {
         return $this->biens;
     }
+    public function __toString()
+    {
+        return $this->libelle;
+    }
 }

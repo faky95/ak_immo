@@ -10,4 +10,16 @@ namespace AK\ImmobilierBundle\Repository;
  */
 class ImageRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function getImage()
+    {
+        $em=$this->getEntityManager()->createQueryBuilder();
+        $dql=$em->select('i','b')
+        ->from('AKImmoblierBundle:Image','i')
+        ->leftJoin('i.bien','b')
+        ->where('i.bien = b.id')
+        //->setParameter()
+        ->getQuery();
+        return $dql->getResult();
+    }
 }
