@@ -113,17 +113,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/front')) {
-            // ak_immobilier_homepage
-            if ('/front' === $pathinfo) {
-                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::viewBienAction',  '_route' => 'ak_immobilier_homepage',);
-            }
-
-            // typeBien
-            if ('/front/type' === $pathinfo) {
-                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::typeBienAction',  '_route' => 'typeBien',);
-            }
-
+        // ak_immobilier_homepage
+        if ('/front' === $pathinfo) {
+            return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::viewBienAction',  '_route' => 'ak_immobilier_homepage',);
         }
 
         // homepage
@@ -133,6 +125,27 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/admin')) {
+            // easyadmin
+            if ('/admin' === $trimmedPathinfo) {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'easyadmin');
+                }
+
+                return array (  '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'easyadmin',);
+            }
+
+            // admin
+            if ('/admin' === $trimmedPathinfo) {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'admin');
+                }
+
+                return array (  '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'admin',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
