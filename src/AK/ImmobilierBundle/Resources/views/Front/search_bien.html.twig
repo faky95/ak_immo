@@ -3,18 +3,18 @@
 {% extends "::base.html.twig" %}
 
 
-{% block body %}
-<div class="container">
-<h1 style="text-align:center;margin-top:10px;"> Voici la liste des Biens </h1>
-<div class="col-12 ">
+ {% block body %} 
+ <h1> welcome </h1>
 
-<table border="2" >
+<table id="table" >
 <tr>
 
 <th>nom</th>
 <th>prix</th>
 <th>description</th>
-<th>etat</th>
+<th>localite</th>
+<th>type</th>
+<th>Image</th>
 
 </tr>
 {%for bien in biens %}
@@ -23,18 +23,20 @@
 <td>{{bien.nombien}}</td>
 <td>{{bien.prixlocation }}</td>
 <td>{{bien.description}}</td>
+<td>{{bien.localite}}</td>
+<td>{{bien.typebien}}</td>
+ <td>
+    
+ {% for image in bien.images %}
+ {# {{image.image}} #}
+   <img src="{{asset('assets/img/photo/'~image.image)}}"class="img">
 
-<td>{{bien.etat}}</td>
+{% endfor %}
 
-</tr>
-
-
-{%endfor%}
-</table>
-</div>
-
-</div>
-
+ </td>
+ {% endfor %}
+ 
+ 
 
 {% endblock %}
 

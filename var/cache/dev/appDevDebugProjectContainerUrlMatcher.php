@@ -119,9 +119,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::viewBienAction',  '_route' => 'ak_immobilier_homepage',);
             }
 
-            // typeBien
-            if ('/front/type' === $pathinfo) {
-                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::typeBienAction',  '_route' => 'typeBien',);
+            // reserver
+            if (0 === strpos($pathinfo, '/front/reserver') && preg_match('#^/front/reserver/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'reserver')), array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::reserverAction',));
+            }
+
+            // searchBien
+            if ('/front/searchBien' === $pathinfo) {
+                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::searchBienAction',  '_route' => 'searchBien',);
+            }
+
+            // insertBien
+            if ('/front/insertbien' === $pathinfo) {
+                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::insertBienAction',  '_route' => 'insertBien',);
             }
 
         }

@@ -22,12 +22,14 @@
 <td>{{image.id}}</td>
 <td><img src="{{asset('assets/img/photo/'~image.image) }}" class="img"> </td>
 <td>{{image.bien}}</td>
+{{% block style %}}
 <style>
 .img
 {
     width:200px;
 }
 </style>
+{{% endblock %}}
 
 
 </tr>

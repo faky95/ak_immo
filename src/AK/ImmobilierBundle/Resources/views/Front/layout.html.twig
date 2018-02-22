@@ -7,45 +7,32 @@
             top: 30px;
             right: 250px;
         }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 40%;
+            border-radius: 5px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        img {
+            border-radius: 5px 5px 0 0;
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+        .img
+        {
+            width:200px;
+        }
+        li{
+            list-style: none;
+        }
     </style>
-{% endblock %}
-{% block header %}
-    <!-- Header -->
-    <div class="container">
-        <div class="header row">
-            <div class="span12">
-                <div class="navbar">
-                    <div class="navbar-inner">
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </a>
-                        <h1>
-                            <span class="violet">AK1/2 IMMO </span>
-                            <span class="slogan"> trouver votre futur logement</span>
-                        </h1>
-                        <div class="nav-collapse collapse">
-                            <ul class="nav pull-right">
-                                <li class="current-page">
-                                    <a href=""><i class="icon-home"></i><br />ACCUEIL</a>
-                                 </li>
-                                 <li>
-                                    <a href=""><i class="icon-camera"></i><br />Portfolio</a>
-                                </li> 
-                                {# <li>
-                                    <a href="{{asset('services.html')}}"><i class="icon-tasks"></i><br />RESERVATION</a>
-                                </li> #}
-                                    <li>
-                                    <a href="{# {{path('contact_path')}} #}"><i class="icon-envelope-alt"></i><br />Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 {% endblock %}
 {% block main %}
     <!-- Slider -->
@@ -82,8 +69,7 @@
             </div>
         </div>
     </div>
-    {% block plus %}
-    {% endblock %}
+
     {% endblock %}
 
     <!-- Site Description -->
@@ -103,16 +89,27 @@
 
           <div class="g-bg-white g-pa-30"style="margin-top:50px;">
             <!-- Input Group -->
-            <form method="post" > 
+            <form method="post" action="{{path('searchBien')}}" > 
             <div class="row" style="display:flex;margin-left:200px">
                 <div class="col-lg-3">
-                      <input name="localite"class="col-lg-3 form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="Search by City ...">
+                    <select>
+                        <option value="" > Choisir la localite </option>
+                        {% for localite in localites %}
+                            <option value="" name="localite"> {{localite.nomlocalite}} </option>
+                        {% endfor %}
+                        
+                    </select>
                 </div>
                 <div class="col-lg-3 "style="margin-left:30px;">
-                 
+                    <select>
+                        <option value=""> Choisir le Type Bien </option>
+                        {% for type in types %}
+                            <option value="" name="typebien"> {{type.libelle}} </option>
+                        {% endfor %}
+                    </select>
                 </div>  
                 <div class="col-lg-3" style="margin-left:30px;">
-                     <input name="prixlocation"class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="Budget">
+                     <input name="prixlocation"class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="prix">
                 </div>
                 <div class="col-lg-3 bg-primary"style="margin-left:30px;">
                     <input name="search"value="SEARCH"  style="width:100px; height:30px; margin-bottom:12px" type="submit">
@@ -123,60 +120,90 @@
             </form>
             
           </div>
-           <div class="row">
-          
-           
-           <table border="2" >
+    {% block plus %}
+    {% endblock %}
+    <div class="col-lg-12">
+        <ul style="display: flex;">
+        {% for bien in biens %}
+            <div class="card text-white bg-primary">
+              <img class="card-img-top" src="holder.js/100px180/" alt="">
+              <div class="card-body">
+              
+            <li>
+                <ul>
+                    {% for image in bien.images %}
+                        <li>
+                        <img src="{{asset('assets/img/photo/'~image.image)}}"class="img">
+                        </li>
+                    {% endfor %}
+                    <li>{{bien.typebien}}</li>
+                    <li>{{bien.nombien}}</li>
+                    <li>{{bien.prixlocation }}</li>
+                </ul>
+                <a href="{{path('reserver', {'id':bien.id})}}"><button><span class="violet">RESERVER</span></button></a>
+            </li>
+            </div>
+            </div>
+        {% endfor %}
+        </ul>
+    </div> 
+    <div class="col-lg-12">
+        <ul style="display: flex;">
+        {% for bien in biens %}
+            <div class="card text-white bg-primary">
+              <img class="card-img-top" src="holder.js/100px180/" alt="">
+              <div class="card-body">
+              
+            <li>
+                <ul>
+                    {% for image in bien.images %}
+                        <li>
+                        <img src="{{asset('assets/img/photo/'~image.image)}}"class="img">
+                        </li>
+                    {% endfor %}
+                    <li>{{bien.typebien}}</li>
+                    <li>{{bien.nombien}}</li>
+                    <li>{{bien.prixlocation }}</li>
+                </ul>
+                <a href="{{path('reserver', {'id':bien.id})}}"><button><span class="violet">RESERVER</span></button></a>
+            </li>
+            </div>
+            </div>
+        {% endfor %}
+        </ul>
+    </div> 
+{# <thead>
 <tr>
-
 <th>nom</th>
 <th>prix</th>
 <th>description</th>
 <th>localite</th>
 <th>typebien</th>
 <th>Image</th>
-
-
 </tr>
-{% for bien in biens %}
+</thead> #}
+{# <tbody> #}
+{# <tr> #}
+{# <li>{{bien.description}}</li>
+<li>{{bien.localite}}</li> #}
+{# <li>{{bien.typebien}}</li> #}
+ {# <td> #}
+ {# </tbody> #}   
+ 
 
-<tr>
-
-
-<td>{{bien.nombien}}</td>
-<td>{{bien.prixlocation }}</td>
-<td>{{bien.description}}</td>
-<td>{{bien.localite}}</td>
-<td>{{bien.typebien}}</td>
- <td>
-    
- {% for image in bien.images %}
- {# {{image.image}} #}
-   <img src="{{asset('assets/img/photo/'~image.image)}}"class="img">
-
-{% endfor %}
-
- </td> 
- <style>
+{#  </td> #} 
+{#  <style>
  .img
  {
      width:200px;
  }
  </style>
-
+ #}
 {# {% if bien.etat == false %}
 <td> <a href="{{path('etat',{'id':bien.id})}}">libre</a> </td>
 {% else %}
 <td> <a href="{{path('etat',{'id':bien.id})}}">occupé</a> </td>
-{% endif %} #}
-
-</tr>
-
-
-{% endfor %}
-</table>
-</div>   
-     
+{% endif %} #}   
      {# <!-- Portfolio -->
              <div class="portfolio portfolio-page container"id="portfolio">
            
