@@ -78,4 +78,6 @@ assetic:
     filters:
         cssrewrite: ~
 
-# ...
+easy_admin:
+    entities:
+        - AppBundle\Entity\User

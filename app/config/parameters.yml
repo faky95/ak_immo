@@ -4,7 +4,11 @@ parameters:
     database_port: 3306
     database_name: akimo
     database_user: root
+<<<<<<< HEAD
     database_password: bbyou
+=======
+    database_password: babacar
+>>>>>>> 20891148ae9e0833eeba6ae7e9d9174edeabd7c5
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
