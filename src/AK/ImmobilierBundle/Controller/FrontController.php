@@ -14,6 +14,7 @@ use AK\ImmobilierBundle\Form\BienType;
 use AK\ImmobilierBundle\Entity\Image;
 use AK\ImmobilierBundle\Entity\Client;
 use AK\ImmobilierBundle\Form\ClientType;
+use AK\ImmobilierBundle\Entity\Reservation;
 
 class FrontController extends Controller
 {
@@ -97,11 +98,11 @@ public function viewBienAction()
       return $image;
     }
 
-    public function reserverAction(Request $request,$id)
-    {
+    // public function reserverAction(Request $request,$id)
+    // {
 
-        return $this->render('AKImmobilierBundle:Front:reserver.html.twig');
-    }
+    //     return $this->render('AKImmobilierBundle:Front:reserver.html.twig');
+    // }
 
     public function searchBienAction(Request $request)
     {
@@ -122,50 +123,53 @@ public function viewBienAction()
             ));
         } 
     }
-    // public function reserverAction(Request $request,$id)
-    // {
+    public function reserverAction(Request $request,$id)
+    {
          
-    //    $em = $this->getDoctrine()->getManager();
-    //    $listbien = $em->getRepository('AKImmobilierBundle:Bien')->find($id);
-    //    $client = new Client();
-    //    $form = $this->createForm(ClientType::class, $client);
+       $em = $this->getDoctrine()->getManager();
+       $listbien = $em->getRepository('AKImmobilierBundle:Bien')->find($id);
+       $client = new Client();
+       $form = $this->createForm(ClientType::class, $client);
 
-    //    if ($request->isMethod('POST')) 
-    //    {
-    //        if (isset($_POST['submit']))
-    //         {
-    //            $user = $em->getRepository('SNTDarmankoBundle:Client')
-    //            ->findBy(['email' => $_POST['login'], 'motdepasse' => $_POST['password']]);
-    //            if ($user) {
-    //                $reserv = new Reservation();
-    //                $reserv->setDateReservation(new \DateTime());
-    //                $reserv->setEtat(0);
-    //                $reserv->setClient($user);
-    //                $reserv->setBien($listbien);
-    //                $em->persist($reserv);
-    //                $em->flush();
+       if ($request->isMethod('POST')) 
+       {
+           if (isset($_POST['submit']))
+            {
+               $user = $em->getRepository('AKImmobilierBundle:Client')
+               ->findBy(['email' => $_POST['login'], 'motdepasse' => $_POST['password']]);
+               if ($user) {
+                   $reserve = new Reservation();
+                   $reserve->setDateReservation(new \DateTime());
+                   $reserve->setEtat(0);
+                   $reserve->setClient($user);
+                   $reserve->setBien($listbien);
+                   $em->persist($reserve);
+                   $em->flush();
 
-    //                return $this->render('SNTDarmankoBundle:reservation:confirm.html.twig');
-    //            }
-    //        } else {
-    //            $form->HandleRequest($request);
-    //            if ($form->isValid()) {
-    //                $em->persist($client);
+                   return $this->render('AKImmobilierBundle:Front:confirm.html.twig');
+               }
+           } 
+           else
+            {
+               $form->HandleRequest($request);
+               if ($form->isValid()) 
+               {
+                   $em->persist($client);
 
-    //                $reserv = new Reservation();
-    //                $reserv->setDateReservation(new \DateTime());
-    //                $reserv->setEtat(0);
-    //                $reserv->setClient($client);
-    //                $reserv->setBien($listbien);
-    //                $em->persist($reserv);
-    //                $em->flush();
-    //            }
+                   $reserv = new Reservation();
+                   $reserv->setDateReservation(new \DateTime());
+                   $reserv->setEtat(0);
+                   $reserv->setClient($client);
+                   $reserv->setBien($listbien);
+                   $em->persist($reserv);
+                   $em->flush();
+               }
 
-    //            return $this->render('SNTDarmankoBundle:reservation:confirm.html.twig');
-    //        }
-    //    }
+               return $this->render('AKImmobilierBundle:Front:confirm.html.twig');
+           }
+       }
 
-       return $this->render('SNTDarmankoBundle:reservation:detail.html.twig', array(
+       return $this->render('AKImmobilierBundle:Front:reserver.html.twig', array(
            'biens' => $listbien, 'form' => $form->createView(),
        ));
    

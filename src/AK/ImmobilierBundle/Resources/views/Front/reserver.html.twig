@@ -1,14 +1,16 @@
 {% extends "::base.html.twig" %}
 
-{% block style %}
+{# {% block style %}
      <style>
         h1{
             text-align:center;    
         }
     </style> 
-{% endblock %}
-
+{% endblock %} #}
+{% block body %}
+{{form(form)}} 
 {% block main %}
+{#
 <div class="contact-us container">
             <div class="row">
                 <div class="contact-form span6">
@@ -30,7 +32,7 @@
                           <input id="password" type="password" name="password" placeholder="Your password...">
                          {# <label for="message" class="messageLabel">Message</label> #}
                           {# <textarea id="message" name="message" placeholder="Your message..."></textarea> #} 
-                        <input type="submit" name="envoyer" value="Envoyer">
+                        {# <input type="submit" name="envoyer" value="Envoyer">
                     </form>
                 </div>
                 <div class="contact-form span6">
@@ -40,13 +42,14 @@
                           <input id="name" type="text" name="name" placeholder="Enter your username/password...">
                         {# <label for="email" class="emailLabel">Email</label>
                           <input id="email" type="text" name="email" placeholder="Enter your email..."> #}
-                        <label for="subject">Password</label>
+                        {# <label for="subject">Password</label>
                           <input id="password" type="password" name="password" placeholder="Your password...">
                          {# <label for="message" class="messageLabel">Message</label> #}
                           {# <textarea id="message" name="message" placeholder="Your message..."></textarea> #} 
-                        <button type="submit">Send</button>
+                        {# <button type="submit">Send</button>
                     </form>
                 </div>
-            </div>
-</div>   
+            </div> #}
+{# </div>      #}
+{% endblock %}
 {% endblock %} 
