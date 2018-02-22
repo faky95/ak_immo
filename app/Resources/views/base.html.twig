@@ -34,21 +34,65 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('assets/ico/apple-touch-icon-72-precomposed.png')}}">
         <link rel="apple-touch-icon-precomposed" href="{{asset('assets/ico/apple-touch-icon-57-precomposed.png')}}">
         {% endblock %}
-        {% block styles %}
-        {% endblock %}
+        <script>
+            {% block script %}
+            {% endblock %}
+        </script>
+
+        <style>
+            {% block styles %}
+            {% endblock %}
+        </style>
     </head>
     <body>
     {% block body %}
         <header>
             {% block header %}
-
-            {% endblock %}
+    <!-- Header -->
+    <div class="container">
+        <div class="header row">
+            <div class="span12">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <h1>
+                            <span class="violet">AK1/2 IMMO </span>
+                            <span class="slogan"> trouver votre futur logement</span>
+                        </h1>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right">
+                                <li class="current-page">
+                                    <a href="{{ path('ak_immobilier_homepage') }}"><i class="icon-home"></i><br />ACCUEIL</a>
+                                 </li>
+                                 <li>
+                                    <a href=""><i class="icon-camera"></i><br />Portfolio</a>
+                                </li> 
+                                {# <li>
+                                    <a href="{{asset('services.html')}}"><i class="icon-tasks"></i><br />RESERVATION</a>
+                                </li> #}
+                                    <li>
+                                    <a href="{# {{path('contact_path')}} #}"><i class="icon-envelope-alt"></i><br />Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
         </header>
         <div class="main">
         {% block main %}
 
         {% endblock %}
         </div>
+       {% block plus %}
+    {% endblock %} 
         <footer>
         {% block footer %}
             <div class="container"i_,>
@@ -97,7 +141,12 @@
         </footer>
         {% block javascript %}
         <!-- Javascript -->
+<<<<<<< HEAD
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+=======
+        <script type="text/javascript" src="{{asset('http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js')}}"></script> 
+        <script type="text/javascript" src="{{asset('js/akimmo.js')}}"></script> 
+>>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
         <script src="{{asset('assets/js/jquery-1.8.2.min.js')}}"></script>
         <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('assets/js/jquery.flexslider.js')}}"></script>

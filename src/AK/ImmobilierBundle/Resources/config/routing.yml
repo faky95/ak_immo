@@ -3,6 +3,7 @@ ak_immobilier_homepage:
     path:     /front
     defaults: { _controller: AKImmobilierBundle:Front:viewBien }
 
+<<<<<<< HEAD
 search:
     path:     /front/search
     defaults: { _controller: AKImmobilierBundle:Front:searchBien }
@@ -11,6 +12,24 @@ reservateBien:
     path:     /front/reserver
     defaults: { _controller: AKImmobilierBundle:Front:reservateBien }         
 
+=======
+
+reserver:
+    path:     /front/reserver/{id}
+    defaults: { _controller: AKImmobilierBundle:Front:reserver }
+    requirements:
+        id: \d+
+    
+searchBien:
+
+    path:     /front/searchBien
+    defaults: { _controller: AKImmobilierBundle:Front:searchBien }
+
+insertBien:
+
+    path:     /front/insertbien
+    defaults: { _controller: AKImmobilierBundle:Front:insertBien }    
+>>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
   
 
 

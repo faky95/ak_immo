@@ -30,11 +30,11 @@ class DefaultController extends Controller
                 $repository=$this
                 ->getDoctrine ()
                 ->getManager()
-                ->getRepository('FKImmoBundle:Bien');
+                ->getRepository('AKImmobilierBundle:Bien');
                
                 $listBien=$repository->findAll();
 
-                return $this->render('FKImmoBundle:Front:search_bien.html.twig', array(
+                return $this->render('AKImmobilierBundle:Front:search_bien.html.twig', array(
                     'biens'=>$listBien
                      ));
             }   

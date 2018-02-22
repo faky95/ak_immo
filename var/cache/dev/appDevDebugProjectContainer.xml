@@ -19,6 +19,7 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="AKImmobilierBundle">AK\ImmobilierBundle\AKImmobilierBundle</parameter>
       <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
+      <parameter key="EasyAdminBundle">EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -76,6 +77,11 @@
         <parameter key="path">/var/www/html/ak_immo/vendor/symfony/assetic-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\AsseticBundle</parameter>
       </parameter>
+      <parameter key="EasyAdminBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/var/www/html/ak_immo/vendor/javiereguiluz/easyadmin-bundle/src</parameter>
+        <parameter key="namespace">EasyCorp\Bundle\EasyAdminBundle</parameter>
+      </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
         <parameter key="path">/var/www/html/ak_immo/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle</parameter>
@@ -108,7 +114,11 @@
     <parameter key="database_port">3306</parameter>
     <parameter key="database_name">akimo</parameter>
     <parameter key="database_user">root</parameter>
-    <parameter key="database_password">faky95</parameter>
+<<<<<<< HEAD
+    <parameter key="database_password">bbyou</parameter>
+=======
+    <parameter key="database_password">babacar</parameter>
+>>>>>>> 20891148ae9e0833eeba6ae7e9d9174edeabd7c5
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -373,6 +383,7 @@
       <parameter>AppBundle</parameter>
       <parameter>AKImmobilierBundle</parameter>
       <parameter>AsseticBundle</parameter>
+      <parameter>EasyAdminBundle</parameter>
       <parameter>DebugBundle</parameter>
       <parameter>WebProfilerBundle</parameter>
       <parameter>SensioDistributionBundle</parameter>
@@ -402,6 +413,55 @@
     <parameter key="assetic.cache.class">Assetic\Cache\FilesystemCache</parameter>
     <parameter key="assetic.use_controller_worker.class">Symfony\Bundle\AsseticBundle\Factory\Worker\UseControllerWorker</parameter>
     <parameter key="assetic.request_listener.class">Symfony\Bundle\AsseticBundle\EventListener\RequestListener</parameter>
+    <parameter key="easyadmin.config" type="collection">
+      <parameter key="entities" type="collection">
+        <parameter key="User" type="collection">
+          <parameter key="class">AppBundle\Entity\User</parameter>
+          <parameter key="name">User</parameter>
+        </parameter>
+      </parameter>
+      <parameter key="design" type="collection">
+        <parameter key="assets" type="collection">
+          <parameter key="css" type="collection"/>
+          <parameter key="js" type="collection"/>
+          <parameter key="favicon" type="collection">
+            <parameter key="path">favicon.ico</parameter>
+            <parameter key="mime_type">image/x-icon</parameter>
+          </parameter>
+        </parameter>
+        <parameter key="theme">default</parameter>
+        <parameter key="color_scheme">dark</parameter>
+        <parameter key="brand_color">#205081</parameter>
+        <parameter key="form_theme" type="collection">
+          <parameter>@EasyAdmin/form/bootstrap_3_horizontal_layout.html.twig</parameter>
+        </parameter>
+        <parameter key="menu" type="collection"/>
+      </parameter>
+      <parameter key="site_name">EasyAdmin</parameter>
+      <parameter key="formats" type="collection">
+        <parameter key="date">Y-m-d</parameter>
+        <parameter key="time">H:i:s</parameter>
+        <parameter key="datetime">F j, Y H:i</parameter>
+      </parameter>
+      <parameter key="disabled_actions" type="collection"/>
+      <parameter key="translation_domain">messages</parameter>
+      <parameter key="list" type="collection">
+        <parameter key="actions" type="collection"/>
+        <parameter key="max_results">15</parameter>
+      </parameter>
+      <parameter key="search" type="collection"/>
+      <parameter key="edit" type="collection">
+        <parameter key="actions" type="collection"/>
+      </parameter>
+      <parameter key="new" type="collection">
+        <parameter key="actions" type="collection"/>
+      </parameter>
+      <parameter key="show" type="collection">
+        <parameter key="actions" type="collection"/>
+        <parameter key="max_results">10</parameter>
+      </parameter>
+    </parameter>
+    <parameter key="easyadmin.cache.dir">/var/www/html/ak_immo/var/cache/dev/easy_admin</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -465,6 +525,10 @@
       <parameter key="data_collector.dump" type="collection">
         <parameter>dump</parameter>
         <parameter>@Debug/Profiler/dump.html.twig</parameter>
+      </parameter>
+      <parameter key="easyadmin.data_collector" type="collection">
+        <parameter>easyadmin</parameter>
+        <parameter>@EasyAdmin/data_collector/easyadmin.html.twig</parameter>
       </parameter>
       <parameter key="data_collector.config" type="collection">
         <parameter>config</parameter>
@@ -672,7 +736,11 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>NQiXz6yg-4+WPAncOos8Rl</argument>
+<<<<<<< HEAD
+      <argument>HTDPKXcYukR0bLU77yssvw</argument>
+=======
+      <argument>upcW5TPPYp537y5wagAU7X</argument>
+>>>>>>> 20891148ae9e0833eeba6ae7e9d9174edeabd7c5
       <argument>/var/www/html/ak_immo/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -682,7 +750,11 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>NQiXz6yg-4+WPAncOos8Rl</argument>
+<<<<<<< HEAD
+      <argument>HTDPKXcYukR0bLU77yssvw</argument>
+=======
+      <argument>upcW5TPPYp537y5wagAU7X</argument>
+>>>>>>> 20891148ae9e0833eeba6ae7e9d9174edeabd7c5
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -801,7 +873,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator.ceb8bbb9f48e8bfd1c8ec2d209eabdca"/>
+      <argument type="service" id="service_locator.30bf2c7b7ea256929308ef3f7bc62d0d"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.http_foundation"/>
@@ -809,6 +881,7 @@
           <argument type="service" id="form.type_extension.upload.validator"/>
           <argument type="service" id="form.type_extension.csrf"/>
           <argument type="service" id="form.type_extension.form.data_collector"/>
+          <argument type="service" id="easyadmin.form.type.extension"/>
         </argument>
         <argument key="Symfony\Component\Form\Extension\Core\Type\RepeatedType" type="iterator">
           <argument type="service" id="form.type_extension.repeated.validator"/>
@@ -820,6 +893,7 @@
       <argument type="iterator">
         <argument type="service" id="form.type_guesser.validator"/>
         <argument type="service" id="form.type_guesser.doctrine"/>
+        <argument type="service" id="easyadmin.form.guesser.missing_doctrine_orm_type_guesser"/>
       </argument>
       <argument>null</argument>
     </service>
@@ -1181,6 +1255,9 @@
         <argument type="service" id="data_collector.dump"/>
       </call>
       <call method="add">
+        <argument type="service" id="easyadmin.data_collector"/>
+      </call>
+      <call method="add">
         <argument type="service" id="data_collector.config"/>
       </call>
     </service>
@@ -1314,6 +1391,22 @@
         <argument type="collection">
           <argument type="service" id="assetic.request_listener"/>
           <argument>onKernelRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.controller</argument>
+        <argument type="collection">
+          <argument type="service" id="easyadmin.listener.controller"/>
+          <argument>onKernelController</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>easy_admin.post_initialize</argument>
+        <argument type="collection">
+          <argument type="service" id="easyadmin.listener.request_post_initialize"/>
+          <argument>initializeRequest</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -2236,12 +2329,20 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5a8befee845294.09010156</argument>
+<<<<<<< HEAD
+      <argument>5a8ea0cbdfc739.06461725</argument>
+=======
+      <argument>5a8daa66b7bad1.94528738</argument>
+>>>>>>> 20891148ae9e0833eeba6ae7e9d9174edeabd7c5
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5a8befee845294.09010156</argument>
+<<<<<<< HEAD
+      <argument>5a8ea0cbdfc739.06461725</argument>
+=======
+      <argument>5a8daa66b7bad1.94528738</argument>
+>>>>>>> 20891148ae9e0833eeba6ae7e9d9174edeabd7c5
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -2354,6 +2455,9 @@
         <argument type="service" id="assetic.twig_extension"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="easyadmin.twig.extension"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="twig.extension.dump"/>
       </call>
       <call method="addExtension">
@@ -2426,6 +2530,10 @@
       <call method="addPath">
         <argument>/var/www/html/ak_immo/src/AK/ImmobilierBundle/Resources/views</argument>
         <argument>AKImmobilier</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/html/ak_immo/vendor/javiereguiluz/easyadmin-bundle/src/Resources/views</argument>
+        <argument>EasyAdmin</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/html/ak_immo/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -2574,6 +2682,10 @@
       <call method="addPath">
         <argument>/var/www/html/ak_immo/src/AK/ImmobilierBundle/Resources/views</argument>
         <argument>AKImmobilier</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/html/ak_immo/vendor/javiereguiluz/easyadmin-bundle/src/Resources/views</argument>
+        <argument>EasyAdmin</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/html/ak_immo/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -2855,7 +2967,11 @@
         <argument key="port">3306</argument>
         <argument key="dbname">akimo</argument>
         <argument key="user">root</argument>
-        <argument key="password">faky95</argument>
+<<<<<<< HEAD
+        <argument key="password">bbyou</argument>
+=======
+        <argument key="password">babacar</argument>
+>>>>>>> 20891148ae9e0833eeba6ae7e9d9174edeabd7c5
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="defaultTableOptions" type="collection"/>
@@ -2904,6 +3020,7 @@
     <service id="doctrine.orm.default_configuration" class="Doctrine\ORM\Configuration" public="false">
       <call method="setEntityNamespaces">
         <argument type="collection">
+          <argument key="AppBundle">AppBundle\Entity</argument>
           <argument key="AKImmobilierBundle">AK\ImmobilierBundle\Entity</argument>
         </argument>
       </call>
@@ -2947,10 +3064,15 @@
     <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
+        <argument>/var/www/html/ak_immo/src/AppBundle/Entity</argument>
         <argument>/var/www/html/ak_immo/src/AK/ImmobilierBundle/Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument>AppBundle\Entity</argument>
+      </call>
       <call method="addDriver">
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>AK\ImmobilierBundle\Entity</argument>
@@ -3109,6 +3231,10 @@
         <argument>twig</argument>
       </call>
       <call method="addResource">
+        <argument type="service" id="assetic.twig_directory_resource.EasyAdminBundle"/>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
         <argument type="service" id="assetic.twig_directory_resource.DebugBundle"/>
         <argument>twig</argument>
       </call>
@@ -3179,6 +3305,7 @@
         <argument>AppBundle</argument>
         <argument>AKImmobilierBundle</argument>
         <argument>AsseticBundle</argument>
+        <argument>EasyAdminBundle</argument>
         <argument>DebugBundle</argument>
         <argument>WebProfilerBundle</argument>
         <argument>SensioDistributionBundle</argument>
@@ -3222,6 +3349,219 @@
     </service>
     <service id="assetic.request_listener" class="Symfony\Bundle\AsseticBundle\EventListener\RequestListener">
       <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+    </service>
+    <service id="easyadmin.cache.manager" class="EasyCorp\Bundle\EasyAdminBundle\Cache\CacheManager">
+      <argument>/var/www/html/ak_immo/var/cache/dev/easy_admin</argument>
+    </service>
+    <service id="easyadmin.config.manager" class="EasyCorp\Bundle\EasyAdminBundle\Configuration\ConfigManager">
+      <argument type="service" id="easyadmin.cache.manager"/>
+      <argument type="service" id="property_accessor"/>
+      <argument type="collection">
+        <argument key="entities" type="collection">
+          <argument key="User" type="collection">
+            <argument key="class">AppBundle\Entity\User</argument>
+            <argument key="name">User</argument>
+          </argument>
+        </argument>
+        <argument key="design" type="collection">
+          <argument key="assets" type="collection">
+            <argument key="css" type="collection"/>
+            <argument key="js" type="collection"/>
+            <argument key="favicon" type="collection">
+              <argument key="path">favicon.ico</argument>
+              <argument key="mime_type">image/x-icon</argument>
+            </argument>
+          </argument>
+          <argument key="theme">default</argument>
+          <argument key="color_scheme">dark</argument>
+          <argument key="brand_color">#205081</argument>
+          <argument key="form_theme" type="collection">
+            <argument>@EasyAdmin/form/bootstrap_3_horizontal_layout.html.twig</argument>
+          </argument>
+          <argument key="menu" type="collection"/>
+        </argument>
+        <argument key="site_name">EasyAdmin</argument>
+        <argument key="formats" type="collection">
+          <argument key="date">Y-m-d</argument>
+          <argument key="time">H:i:s</argument>
+          <argument key="datetime">F j, Y H:i</argument>
+        </argument>
+        <argument key="disabled_actions" type="collection"/>
+        <argument key="translation_domain">messages</argument>
+        <argument key="list" type="collection">
+          <argument key="actions" type="collection"/>
+          <argument key="max_results">15</argument>
+        </argument>
+        <argument key="search" type="collection"/>
+        <argument key="edit" type="collection">
+          <argument key="actions" type="collection"/>
+        </argument>
+        <argument key="new" type="collection">
+          <argument key="actions" type="collection"/>
+        </argument>
+        <argument key="show" type="collection">
+          <argument key="actions" type="collection"/>
+          <argument key="max_results">10</argument>
+        </argument>
+      </argument>
+      <argument>true</argument>
+      <call method="addConfigPass">
+        <argument type="service" id="easyadmin.configuration.normalizer_config_pass"/>
+      </call>
+      <call method="addConfigPass">
+        <argument type="service" id="easyadmin.configuration.design_config_pass"/>
+      </call>
+      <call method="addConfigPass">
+        <argument type="service" id="easyadmin.configuration.menu_config_pass"/>
+      </call>
+      <call method="addConfigPass">
+        <argument type="service" id="easyadmin.configuration.action_config_pass"/>
+      </call>
+      <call method="addConfigPass">
+        <argument type="service" id="easyadmin.configuration.metadata_config_pass"/>
+      </call>
+      <call method="addConfigPass">
+        <argument type="service" id="easyadmin.configuration.property_config_pass"/>
+      </call>
+      <call method="addConfigPass">
+        <argument type="service" id="easyadmin.configuration.view_config_pass"/>
+      </call>
+      <call method="addConfigPass">
+        <argument type="service" id="easyadmin.configuration.template_config_pass"/>
+      </call>
+      <call method="addConfigPass">
+        <argument type="service" id="easyadmin.configuration.default_config_pass"/>
+      </call>
+    </service>
+    <service id="easyadmin.query_builder" class="EasyCorp\Bundle\EasyAdminBundle\Search\QueryBuilder">
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="easyadmin.finder" class="EasyCorp\Bundle\EasyAdminBundle\Search\Finder" public="false">
+      <argument type="service" id="easyadmin.query_builder"/>
+      <argument type="service" id="easyadmin.paginator"/>
+    </service>
+    <service id="easyadmin.autocomplete" class="EasyCorp\Bundle\EasyAdminBundle\Search\Autocomplete">
+      <argument type="service" id="easyadmin.config.manager"/>
+      <argument type="service" id="easyadmin.finder"/>
+      <argument type="service" id="property_accessor"/>
+    </service>
+    <service id="easyadmin.paginator" class="EasyCorp\Bundle\EasyAdminBundle\Search\Paginator"/>
+    <service id="easyadmin.router" class="EasyCorp\Bundle\EasyAdminBundle\Router\EasyAdminRouter">
+      <argument type="service" id="easyadmin.config.manager"/>
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="property_accessor"/>
+      <argument type="service" id="request_stack" on-invalid="null"/>
+    </service>
+    <service id="easyadmin.twig.extension" class="EasyCorp\Bundle\EasyAdminBundle\Twig\EasyAdminTwigExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id="easyadmin.config.manager"/>
+      <argument type="service" id="property_accessor"/>
+      <argument type="service" id="easyadmin.router"/>
+      <argument>true</argument>
+      <argument type="service" id="security.logout_url_generator" on-invalid="null"/>
+    </service>
+    <service id="easyadmin.listener.controller" class="EasyCorp\Bundle\EasyAdminBundle\EventListener\ControllerListener">
+      <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController"/>
+      <argument type="service" id="easyadmin.config.manager"/>
+      <argument type="service" id="debug.controller_resolver"/>
+    </service>
+    <service id="easyadmin.listener.request_post_initialize" class="EasyCorp\Bundle\EasyAdminBundle\EventListener\RequestPostInitializeListener">
+      <tag name="kernel.event_listener" event="easy_admin.post_initialize" method="initializeRequest"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="request_stack" on-invalid="null"/>
+    </service>
+    <service id="easyadmin.data_collector" class="EasyCorp\Bundle\EasyAdminBundle\DataCollector\EasyAdminDataCollector" public="false">
+      <tag name="data_collector" template="@EasyAdmin/data_collector/easyadmin.html.twig" id="easyadmin"/>
+      <argument type="service" id="easyadmin.config.manager"/>
+    </service>
+    <service id="easyadmin.configuration.normalizer_config_pass" class="EasyCorp\Bundle\EasyAdminBundle\Configuration\NormalizerConfigPass" public="false">
+      <tag name="easyadmin.config_pass" priority="90"/>
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="easyadmin.configuration.design_config_pass" class="EasyCorp\Bundle\EasyAdminBundle\Configuration\DesignConfigPass" public="false">
+      <tag name="easyadmin.config_pass" priority="80"/>
+      <argument type="service" id="service_container"/>
+      <argument>true</argument>
+      <argument>en</argument>
+    </service>
+    <service id="easyadmin.configuration.menu_config_pass" class="EasyCorp\Bundle\EasyAdminBundle\Configuration\MenuConfigPass" public="false">
+      <tag name="easyadmin.config_pass" priority="70"/>
+    </service>
+    <service id="easyadmin.configuration.action_config_pass" class="EasyCorp\Bundle\EasyAdminBundle\Configuration\ActionConfigPass" public="false">
+      <tag name="easyadmin.config_pass" priority="60"/>
+    </service>
+    <service id="easyadmin.configuration.metadata_config_pass" class="EasyCorp\Bundle\EasyAdminBundle\Configuration\MetadataConfigPass" public="false">
+      <tag name="easyadmin.config_pass" priority="50"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="easyadmin.configuration.property_config_pass" class="EasyCorp\Bundle\EasyAdminBundle\Configuration\PropertyConfigPass" public="false">
+      <tag name="easyadmin.config_pass" priority="40"/>
+      <argument type="service" id="form.registry"/>
+    </service>
+    <service id="easyadmin.configuration.view_config_pass" class="EasyCorp\Bundle\EasyAdminBundle\Configuration\ViewConfigPass" public="false">
+      <tag name="easyadmin.config_pass" priority="30"/>
+    </service>
+    <service id="easyadmin.configuration.template_config_pass" class="EasyCorp\Bundle\EasyAdminBundle\Configuration\TemplateConfigPass" public="false">
+      <tag name="easyadmin.config_pass" priority="20"/>
+      <argument type="service" id="twig.loader.filesystem"/>
+    </service>
+    <service id="easyadmin.configuration.default_config_pass" class="EasyCorp\Bundle\EasyAdminBundle\Configuration\DefaultConfigPass" public="false">
+      <tag name="easyadmin.config_pass" priority="10"/>
+    </service>
+    <service id="easyadmin.form.type" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminFormType">
+      <tag name="form.type"/>
+      <argument type="service" id="easyadmin.config.manager"/>
+      <argument type="collection">
+        <argument key="4" type="service" id="easyadmin.form.type.configurator.autocomplete"/>
+        <argument key="3" type="service" id="easyadmin.form.type.configurator.collection"/>
+        <argument key="2" type="service" id="easyadmin.form.type.configurator.checkbox"/>
+        <argument key="1" type="service" id="easyadmin.form.type.configurator.type"/>
+        <argument key="0" type="service" id="easyadmin.form.type.configurator.entity"/>
+      </argument>
+    </service>
+    <service id="easyadmin.form.type.autocomplete" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminAutocompleteType">
+      <tag name="form.type" alias="easyadmin_autocomplete"/>
+      <argument type="service" id="easyadmin.config.manager"/>
+    </service>
+    <service id="easyadmin.form.type.divider" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminDividerType">
+      <tag name="form.type" alias="easyadmin_divider"/>
+    </service>
+    <service id="easyadmin.form.type.section" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminSectionType">
+      <tag name="form.type" alias="easyadmin_section"/>
+    </service>
+    <service id="easyadmin.form.type.group" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminGroupType">
+      <tag name="form.type" alias="easyadmin_group"/>
+    </service>
+    <service id="easyadmin.form.type.extension" class="EasyCorp\Bundle\EasyAdminBundle\Form\Extension\EasyAdminExtension">
+      <tag name="form.type_extension" alias="form" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+      <argument type="service" id="request_stack" on-invalid="null"/>
+    </service>
+    <service id="easyadmin.form.type_guesser_chain" class="Symfony\Component\Form\FormTypeGuesserChain" public="false">
+      <argument type="collection">
+        <argument type="service" id="form.type_guesser.validator"/>
+        <argument type="service" id="form.type_guesser.doctrine"/>
+        <argument type="service" id="easyadmin.form.guesser.missing_doctrine_orm_type_guesser"/>
+      </argument>
+    </service>
+    <service id="easyadmin.form.type.configurator.autocomplete" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\Configurator\AutocompleteTypeConfigurator" public="false">
+      <tag name="easyadmin.form.type.configurator" priority="30"/>
+    </service>
+    <service id="easyadmin.form.type.configurator.collection" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\Configurator\CollectionTypeConfigurator" public="false">
+      <tag name="easyadmin.form.type.configurator" priority="20"/>
+    </service>
+    <service id="easyadmin.form.type.configurator.checkbox" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\Configurator\CheckboxTypeConfigurator" public="false">
+      <tag name="easyadmin.form.type.configurator" priority="10"/>
+    </service>
+    <service id="easyadmin.form.type.configurator.type" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\Configurator\TypeConfigurator" public="false">
+      <tag name="easyadmin.form.type.configurator" priority="0"/>
+      <argument type="service" id="easyadmin.config.manager"/>
+    </service>
+    <service id="easyadmin.form.type.configurator.entity" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\Configurator\EntityTypeConfigurator" public="false">
+      <tag name="easyadmin.form.type.configurator" priority="-20"/>
+    </service>
+    <service id="easyadmin.form.guesser.missing_doctrine_orm_type_guesser" class="EasyCorp\Bundle\EasyAdminBundle\Form\Guesser\MissingDoctrineOrmTypeGuesser">
+      <tag name="form.type_guesser"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
       <tag name="twig.extension"/>
@@ -3341,6 +3681,10 @@
           <argument>dump</argument>
           <argument>@Debug/Profiler/dump.html.twig</argument>
         </argument>
+        <argument key="easyadmin.data_collector" type="collection">
+          <argument>easyadmin</argument>
+          <argument>@EasyAdmin/data_collector/easyadmin.html.twig</argument>
+        </argument>
         <argument key="data_collector.config" type="collection">
           <argument>config</argument>
           <argument>@WebProfiler/Collector/config.html.twig</argument>
@@ -3408,9 +3752,14 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.ceb8bbb9f48e8bfd1c8ec2d209eabdca" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.30bf2c7b7ea256929308ef3f7bc62d0d" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminAutocompleteType" type="service" id="easyadmin.form.type.autocomplete"/>
+        <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminDividerType" type="service" id="easyadmin.form.type.divider"/>
+        <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminFormType" type="service" id="easyadmin.form.type"/>
+        <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminGroupType" type="service" id="easyadmin.form.type.group"/>
+        <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminSectionType" type="service" id="easyadmin.form.type.section"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service" id="form.type.form"/>
@@ -3790,6 +4139,28 @@
         </argument>
       </argument>
     </service>
+    <service id="assetic.twig_directory_resource.EasyAdminBundle" class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+      <tag name="assetic.templating.twig"/>
+      <tag name="assetic.formula_resource" loader="twig"/>
+      <argument type="collection">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource" public="false">
+            <argument type="service" id="templating.loader"/>
+            <argument>EasyAdminBundle</argument>
+            <argument>/var/www/html/ak_immo/app/Resources/EasyAdminBundle/views</argument>
+            <argument>/\.[^.]+\.twig$/</argument>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource" public="false">
+            <argument type="service" id="templating.loader"/>
+            <argument>EasyAdminBundle</argument>
+            <argument>/var/www/html/ak_immo/vendor/javiereguiluz/easyadmin-bundle/src/Resources/views</argument>
+            <argument>/\.[^.]+\.twig$/</argument>
+          </service>
+        </argument>
+      </argument>
+    </service>
     <service id="assetic.twig_directory_resource.DebugBundle" class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
       <tag name="assetic.templating.twig"/>
       <tag name="assetic.formula_resource" loader="twig"/>
@@ -3973,7 +4344,11 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>wEaSnjFsM8</argument>
       <argument>0</argument>
-      <argument>NQiXz6yg-4+WPAncOos8Rl</argument>
+<<<<<<< HEAD
+      <argument>HTDPKXcYukR0bLU77yssvw</argument>
+=======
+      <argument>upcW5TPPYp537y5wagAU7X</argument>
+>>>>>>> 20891148ae9e0833eeba6ae7e9d9174edeabd7c5
       <argument>/var/www/html/ak_immo/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3981,7 +4356,11 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>jDtZfLaW8D</argument>
       <argument>0</argument>
-      <argument>NQiXz6yg-4+WPAncOos8Rl</argument>
+<<<<<<< HEAD
+      <argument>HTDPKXcYukR0bLU77yssvw</argument>
+=======
+      <argument>upcW5TPPYp537y5wagAU7X</argument>
+>>>>>>> 20891148ae9e0833eeba6ae7e9d9174edeabd7c5
       <argument>/var/www/html/ak_immo/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3989,7 +4368,11 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>ubbqi+300x</argument>
       <argument>0</argument>
-      <argument>NQiXz6yg-4+WPAncOos8Rl</argument>
+<<<<<<< HEAD
+      <argument>HTDPKXcYukR0bLU77yssvw</argument>
+=======
+      <argument>upcW5TPPYp537y5wagAU7X</argument>
+>>>>>>> 20891148ae9e0833eeba6ae7e9d9174edeabd7c5
       <argument>/var/www/html/ak_immo/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3997,7 +4380,11 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>9-UY345mqe</argument>
       <argument>0</argument>
-      <argument>NQiXz6yg-4+WPAncOos8Rl</argument>
+<<<<<<< HEAD
+      <argument>HTDPKXcYukR0bLU77yssvw</argument>
+=======
+      <argument>upcW5TPPYp537y5wagAU7X</argument>
+>>>>>>> 20891148ae9e0833eeba6ae7e9d9174edeabd7c5
       <argument>/var/www/html/ak_immo/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4092,6 +4479,7 @@
     <service id="doctrine.orm.default_entity_manager.event_manager" alias="doctrine.dbal.default_connection.event_manager" public="false"/>
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default" public="false"/>
     <service id="assetic.value_supplier" alias="assetic.value_supplier.default" public="false"/>
+    <service id="easy_admin.property_accessor" alias="property_accessor"/>
     <service id="Symfony\Component\Templating\EngineInterface" alias="templating.engine.twig" public="false"/>
     <service id="Symfony\Bundle\FrameworkBundle\Templating\EngineInterface" alias="templating.engine.twig" public="false"/>
     <service id="console.command.symfony_bundle_securitybundle_command_userpasswordencodercommand" alias="security.console.user_password_encoder_command"/>

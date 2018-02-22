@@ -1,11 +1,17 @@
 
 {% extends "::base.html.twig" %}
 
+<<<<<<< HEAD
  
 {% block body %}
 <div class="container">
 <h1 style="text-align:center;margin-top:10px;"> Voici la liste des Biens </h1>
 <div class="col-12 ">
+=======
+
+ {% block body %} 
+ <h1> welcome </h1>
+>>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
 
 <table id="table" >
 <tr>
@@ -34,6 +40,7 @@
 
 {% endfor %}
 
+<<<<<<< HEAD
  </td> 
  <td>
  <a href="{{path('reservateBien')}}">RESERVER</a>
@@ -57,6 +64,12 @@
 {% block javascripts %}
      <script type="text/javascript" src="{{ asset('jsakimo/akimo.js') }}"></script>
 {% endblock %}
+=======
+ </td>
+ {% endfor %}
+ 
+ 
+>>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
 
 {% endblock %}
 

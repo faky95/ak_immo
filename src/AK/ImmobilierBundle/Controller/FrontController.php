@@ -12,12 +12,19 @@ use Symfony\Component\HttpFoundation\Response;
 use AK\ImmobilierBundle\Entity\Bien;
 use AK\ImmobilierBundle\Form\BienType;
 use AK\ImmobilierBundle\Entity\Image;
+<<<<<<< HEAD
 use AK\ImmobilierBundle\Entity\Localite;
 use AK\ImmobilierBundle\Form\LocaliteType;
+=======
+use AK\ImmobilierBundle\Entity\Client;
+use AK\ImmobilierBundle\Form\ClientType;
+use AK\ImmobilierBundle\Entity\Reservation;
+>>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
 
 class FrontController extends Controller
 {
   
+<<<<<<< HEAD
     public function viewBienAction()
     {
         $em1 = $this->getDoctrine()->getManager();
@@ -46,6 +53,38 @@ class FrontController extends Controller
     }
   
     public function searchBienAction(Request $request)
+=======
+    
+public function viewBienAction()
+{
+    $em1 = $this->getDoctrine()->getManager();
+
+    $Type = $em1->getRepository('AKImmobilierBundle:Typebien')->findAll();
+
+    $em2 = $this->getDoctrine()->getManager();
+
+   $Localite = $em2->getRepository('AKImmobilierBundle:Localite')->findAll();
+
+
+    //$em = $this->getDoctrine()->getManager();
+    $repository=$this
+    ->getDoctrine ()
+    ->getManager()
+    ->getRepository('AKImmobilierBundle:Bien');
+    
+   
+    $listBien=$repository->findAll();
+    return $this->render('AKImmobilierBundle:Front:layout.html.twig', array(
+         'biens' => $listBien,'types' => $Type,'localites' => $Localite
+    // ...
+));
+   
+   
+}
+
+
+    public function etatBienAction(Bien $bien)
+>>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
     {
     
         if( $request->isMethod('POST')) 
@@ -124,6 +163,7 @@ class FrontController extends Controller
       
     }
 
+<<<<<<< HEAD
    
     // public function Action()
     // {
@@ -153,77 +193,99 @@ class FrontController extends Controller
        
     // }
     // public function BienAction()
+=======
+    public function listBienAction()
+    {
+       //$image=new Image();
+        //$image=$bien->getImages();
+        $bienRepo = $this->getDoctrine()->getManager()->getRepository('AKImmobilierBundle:Front:listBien.html.twig');
+         $image = $bienRepo->findImage();
+      return $image;
+    }
+
+    // public function reserverAction(Request $request,$id)
+>>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
     // {
-    //     $bienRepo = $this->getDoctrine()->getManager()->getRepository('AKImmobilierBundle:Image');
-    //     $local = $bienRepo->getImage();
-    //   return $local;
+
+    //     return $this->render('AKImmobilierBundle:Front:reserver.html.twig');
     // }
 
-  
+    public function searchBienAction(Request $request)
+    {
 
-//     public function searchBienAction(Request $request)
-//     {
-//         $bien=new Bien();
-//         $localite=$request->get('localite');
-//         $prix=$request->get('prixlocation');
-//         $rechercher=$request->get('search');
+        if( $request->isMethod('POST')) 
+        {
+            $localite=$request->get('localite');
+            $typebien=$request->get('typebien');
+            $prixlocation=$request->get('prixlocation');
+            $rechercher=$request->get('rechercher');
+            
+            $bienRepo = $this->getDoctrine()->getManager()->getRepository('AKImmobilierBundle:Bien');
+            $biens = $bienRepo->findBiens($localite, $typebien, $prixlocation );
+
+            return $this->render('AKImmobilierBundle:Front:search_bien.html.twig', array(
+                'biens' => $biens
+            // ...
+            ));
+        } 
+    }
+    public function reserverAction(Request $request,$id)
+    {
+         
+       $em = $this->getDoctrine()->getManager();
+       $listbien = $em->getRepository('AKImmobilierBundle:Bien')->find($id);
+       $client = new Client();
+       $form = $this->createForm(ClientType::class, $client);
+
+       if ($request->isMethod('POST')) 
+       {
+           if (isset($_POST['submit']))
+            {
+               $user = $em->getRepository('AKImmobilierBundle:Client')
+               ->findBy(['email' => $_POST['login'], 'motdepasse' => $_POST['password']]);
+               if ($user) {
+                   $reserve = new Reservation();
+                   $reserve->setDateReservation(new \DateTime());
+                   $reserve->setEtat(0);
+                   $reserve->setClient($user);
+                   $reserve->setBien($listbien);
+                   $em->persist($reserve);
+                   $em->flush();
+
+                   return $this->render('AKImmobilierBundle:Front:confirm.html.twig');
+               }
+           } 
+           else
+            {
+               $form->HandleRequest($request);
+               if ($form->isValid()) 
+               {
+                   $em->persist($client);
+
+                   $reserv = new Reservation();
+                   $reserv->setDateReservation(new \DateTime());
+                   $reserv->setEtat(0);
+                   $reserv->setClient($client);
+                   $reserv->setBien($listbien);
+                   $em->persist($reserv);
+                   $em->flush();
+               }
+
+               return $this->render('AKImmobilierBundle:Front:confirm.html.twig');
+           }
+       }
+
+       return $this->render('AKImmobilierBundle:Front:reserver.html.twig', array(
+           'biens' => $listbien, 'form' => $form->createView(),
+       ));
+   
+  
+            
+          
+            
         
-             
-//                         $repository=$this
-//                         ->getDoctrine ()
-//                         ->getManager()
-//                         ->getRepository('AKImmobilierBundle:Bien');
-                       
-//                         $listBien=$repository->findAll();
-    
-//                         return $this->render('AKImmobilierBundle:Front:layout.html.twig', array(
-//                             'biens'=>$listBien
-//                              ));
-                       
-//                     if(isset($prix) && empty($localite))
-//                     {
-//                         $em=$this->getDoctrine()->getManager();
-//                         $repository=$em->getRepository('FKImmoBundle:Bien');
-//                         $query=$repository->createQueryBuilder('b')
-//                                 ->where('b.prixlocation = :prixlocation')
-//                                 ->setParameter('prixlocation',$prix)
-//                                 ->orderBy('b.prixlocation', 'ASC')
-//                                 ->getQuery();
-//                                 $listBien=$query->getResult();
-    
-    
-//                         return $this->render('FKImmoBundle:Front:search_bien.html.twig', array(
-//                             'biens'=>$listBien
-//                              ));
-//                     }
-    
-//                     if(isset($prix) && empty($localite))
-//                     {
-//                         $em=$this->getDoctrine()->getManager();
-//                         $repository=$em->getRepository('FKImmoBundle:Bien');
-//                         $query=$repository->createQueryBuilder('b')
-//                                 ->where('b.prixlocation = :prixlocation')
-//                                 ->setParameter('prixlocation',$prix)
-//                                 ->orderBy('b.prixlocation', 'ASC')
-//                                 ->getQuery();
-//                                 $listBien=$query->getResult();
-    
-    
-//                         return $this->render('FKImmoBundle:Front:search_bien.html.twig', array(
-//                             'biens'=>$listBien
-//                              ));
-//                     }
-//                     if(empty($prix) && isset($localite))
-//                     {
-                        
-//                     }
-                     
-                        
-                    
-//             }
-                
-              
         
+<<<<<<< HEAD
     
 //     }
 
@@ -232,6 +294,8 @@ class FrontController extends Controller
         return $this->render('AKImmobilierBundle:Front:reservate_bien.html.twig', array(
             // ...
         ));
+=======
+>>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
     }
 
  

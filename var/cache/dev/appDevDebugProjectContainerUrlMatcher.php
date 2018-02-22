@@ -113,12 +113,14 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+<<<<<<< HEAD
         elseif (0 === strpos($pathinfo, '/front')) {
             // ak_immobilier_homepage
             if ('/front' === $pathinfo) {
                 return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::viewBienAction',  '_route' => 'ak_immobilier_homepage',);
             }
 
+<<<<<<< HEAD
             // search
             if ('/front/search' === $pathinfo) {
                 return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::searchBienAction',  '_route' => 'search',);
@@ -127,8 +129,28 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // reservateBien
             if ('/front/reserver' === $pathinfo) {
                 return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::reservateBienAction',  '_route' => 'reservateBien',);
+=======
+            // reserver
+            if (0 === strpos($pathinfo, '/front/reserver') && preg_match('#^/front/reserver/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'reserver')), array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::reserverAction',));
+>>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
             }
 
+            // searchBien
+            if ('/front/searchBien' === $pathinfo) {
+                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::searchBienAction',  '_route' => 'searchBien',);
+            }
+
+            // insertBien
+            if ('/front/insertbien' === $pathinfo) {
+                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::insertBienAction',  '_route' => 'insertBien',);
+            }
+
+=======
+        // ak_immobilier_homepage
+        if ('/front' === $pathinfo) {
+            return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::viewBienAction',  '_route' => 'ak_immobilier_homepage',);
+>>>>>>> 20891148ae9e0833eeba6ae7e9d9174edeabd7c5
         }
 
         // homepage
@@ -138,6 +160,27 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/admin')) {
+            // easyadmin
+            if ('/admin' === $trimmedPathinfo) {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'easyadmin');
+                }
+
+                return array (  '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'easyadmin',);
+            }
+
+            // admin
+            if ('/admin' === $trimmedPathinfo) {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'admin');
+                }
+
+                return array (  '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'admin',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
