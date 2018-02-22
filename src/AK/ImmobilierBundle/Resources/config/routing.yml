@@ -3,6 +3,14 @@ ak_immobilier_homepage:
     path:     /front
     defaults: { _controller: AKImmobilierBundle:Front:viewBien }
 
+search:
+    path:     /front/search
+    defaults: { _controller: AKImmobilierBundle:Front:searchBien }
+
+reservateBien:
+    path:     /front/reserver
+    defaults: { _controller: AKImmobilierBundle:Front:reservateBien }         
+
   
 
 

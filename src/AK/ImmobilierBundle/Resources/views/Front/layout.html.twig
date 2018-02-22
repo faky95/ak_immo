@@ -103,20 +103,32 @@
 
           <div class="g-bg-white g-pa-30"style="margin-top:50px;">
             <!-- Input Group -->
-            <form method="post" > 
+            <form method="post" action="{{path('search')}}"> 
             <div class="row" style="display:flex;margin-left:200px">
                 <div class="col-lg-3">
-                      <input name="localite"class="col-lg-3 form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="Search by City ...">
+                    <select>
+                        <option value=""> Choisir le Type Bien </option>
+                        {% for type in types %}
+                            <option value="" name="typebien"> {{type.libelle}} </option>
+                        {% endfor %}
+                    </select> 
                 </div>
                 <div class="col-lg-3 "style="margin-left:30px;">
-                 
+                     <select>
+                        <option value="" > Choisir la localite </option>
+                        {% for localite in localites %}
+                            <option value="" name="localite"> {{localite.nomlocalite}} </option>
+                        {% endfor %}
+                        
+                    </select>
                 </div>  
                 <div class="col-lg-3" style="margin-left:30px;">
                      <input name="prixlocation"class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="Budget">
                 </div>
                 <div class="col-lg-3 bg-primary"style="margin-left:30px;">
-                    <input name="search"value="SEARCH"  style="width:100px; height:30px; margin-bottom:12px" type="submit">
-                  
+                    
+                     <input name="search"value="SEARCH"  style="width:100px; height:30px; margin-bottom:12px" type="submit">
+                 
                 </div>
             </div>
        

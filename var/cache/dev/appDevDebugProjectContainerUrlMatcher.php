@@ -119,9 +119,14 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::viewBienAction',  '_route' => 'ak_immobilier_homepage',);
             }
 
-            // typeBien
-            if ('/front/type' === $pathinfo) {
-                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::typeBienAction',  '_route' => 'typeBien',);
+            // search
+            if ('/front/search' === $pathinfo) {
+                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::searchBienAction',  '_route' => 'search',);
+            }
+
+            // reservateBien
+            if ('/front/reserver' === $pathinfo) {
+                return array (  '_controller' => 'AK\\ImmobilierBundle\\Controller\\FrontController::reservateBienAction',  '_route' => 'reservateBien',);
             }
 
         }
