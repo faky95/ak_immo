@@ -342,4 +342,9 @@ class Client
     {
         return $this->contrats;
     }
+
+
+    public function __toString(){
+        return $this->nom;
+    }
 }

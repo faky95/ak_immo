@@ -44,13 +44,13 @@ class Contrat
      // …
        /**
 
-   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Contrat", mappedBy = "paiement")
+   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Paiement", mappedBy = "contrat")
    */
 
   private $paiements;
        /**
 
-   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Client")
+   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Client", inversedBy="contrats")
 
    * @ORM\JoinColumn(name = "id_client", referencedColumnName = "id")
 
@@ -59,7 +59,7 @@ class Contrat
   private $client;
         /**
 
-   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Bien")
+   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Bien", inversedBy="contrat")
 
    * @ORM\JoinColumn(name = "id_bien", referencedColumnName = "id")
 

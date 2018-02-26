@@ -34,7 +34,7 @@
         }
     </style>
 {% endblock %}
-{% block main %}
+{% block main %}    
     <!-- Slider -->
     {% block slide %}
     <div class="slider">
@@ -89,7 +89,6 @@
 
           <div class="g-bg-white g-pa-30"style="margin-top:50px;">
             <!-- Input Group -->
-<<<<<<< HEAD
             <form method="post" action="{{path('search')}}"> 
             <div class="row" style="display:flex;margin-left:200px">
                 <div class="col-lg-3">
@@ -106,40 +105,21 @@
                         {% for localite in localites %}
                             <option value="" name="localite"> {{localite.nomlocalite}} </option>
                         {% endfor %}
-                        
-=======
-            <form method="post" action="{{path('searchBien')}}" > 
-            <div class="row" style="display:flex;margin-left:200px">
-                <div class="col-lg-3">
-                    <select>
-                        <option value="" > Choisir la localite </option>
-                        {% for localite in localites %}
-                            <option value="" name="localite"> {{localite.nomlocalite}} </option>
-                        {% endfor %}
-                        
+
                     </select>
-                </div>
-                <div class="col-lg-3 "style="margin-left:30px;">
-                    <select>
-                        <option value=""> Choisir le Type Bien </option>
-                        {% for type in types %}
-                            <option value="" name="typebien"> {{type.libelle}} </option>
-                        {% endfor %}
->>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
-                    </select>
-                </div>  
+                </div> 
                 <div class="col-lg-3" style="margin-left:30px;">
                      <input name="prixlocation"class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="prix">
                 </div>
                 <div class="col-lg-3 bg-primary"style="margin-left:30px;">
-                    
+
                      <input name="search"value="SEARCH"  style="width:100px; height:30px; margin-bottom:12px" type="submit">
-                 
+
                 </div>
             </div>
-       
+
             </form>
-            
+
           </div>
     {% block plus %}
     {% endblock %}
@@ -147,9 +127,9 @@
         <ul style="display: flex;">
         {% for bien in biens %}
             <div class="card text-white bg-primary">
-              <img class="card-img-top" src="holder.js/100px180/" alt="">
+              <img class="card-img-top" src="" alt="">
               <div class="card-body">
-              
+     
             <li>
                 <ul>
                     {% for image in bien.images %}
@@ -172,7 +152,7 @@
         <ul style="display: flex;">
         {% for bien in biens %}
             <div class="card text-white bg-primary">
-              <img class="card-img-top" src="holder.js/100px180/" alt="">
+              <img class="card-img-top" src="" alt="">
               <div class="card-body">
               
             <li>

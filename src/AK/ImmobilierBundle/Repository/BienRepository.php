@@ -46,11 +46,10 @@ class BienRepository extends \Doctrine\ORM\EntityRepository
         $image=$dql->getImages();
         return $image->getResult();
     }
-<<<<<<< HEAD
-    
+
     public function findBiens($localite , $typebien , $prixlocation )
     {
-        $dql = "SELECT b, i FROM AK\ImmobilierBundle\Entity\Bien b 
+        $dql = "SELECT b, i FROM AK\ImmobilierBundle\Entity\Bien b
         left Join b.images i Join b.typebien t Join b.localite l WHERE b.etat = 0";
         if ($localite != 0) {
             $dql .= ' AND l.id = :localite_id';
@@ -78,86 +77,6 @@ class BienRepository extends \Doctrine\ORM\EntityRepository
 
         return $query->getResult();
     }
-=======
-     
-public function findBiens($localite , $typebien , $prixlocation )
-{
-    $dql = "SELECT b, i FROM AK\ImmobilierBundle\Entity\Bien b 
-    left Join b.images i Join b.typebien t Join b.localite l WHERE b.etat = 0";
-    if ($localite != 0) {
-        $dql .= ' AND l.id = :localite_id';
-    }
-    if (isset($typebien) && empty($localite) && empty($prixlocation) ) {
-        $dql .= ' AND t.id = :typebien_id';
-        $dql->setParameter('typebien_id', $typebien);
-    }
-    if ($prixlocation != 0) {
-        $dql .= ' AND b.prixlocation BETWEEN :prixMin AND :prixMax';
-    }
 
-    $query = $this->getEntityManager()->createQuery($dql);
 
-    if ($localite != 0) {
-        $query->setParameter('localite_id', $localite);
-    }
-    if ($typebien != 0) {
-        $query->setParameter('typebien_id', $typebien);
-    }
-    if ($prixlocation != 0) {
-        $query->setParameter('prixMin', $prixlocation - 10000)
-        ->setParameter('prixMax', $prixlocation + 20000);
-    }
-
-    return $query->getResult();
-}
-
->>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

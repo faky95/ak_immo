@@ -49,15 +49,15 @@ class Bien
      */
     private $prixlocation;
      // …
-       /**
-
-   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Bien", mappedBy = "contrat")
-   */
-
-  private $contrats;
         /**
 
-   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Bien", mappedBy = "client")
+    * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Contrat", mappedBy = "bien")
+    */
+
+   private $contrats;
+        /**
+
+   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Client", mappedBy = "bien")
    */
 
   private $clients;
@@ -66,7 +66,7 @@ class Bien
   // …
        /**
 
-   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Bien", mappedBy = "reservation")
+   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Reservation", mappedBy = "bien")
    */
 
   private $reservations;
@@ -84,7 +84,7 @@ class Bien
   
       /**
 
-   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Localite")
+   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Localite",inversedBy="bien" )
 
    * @ORM\JoinColumn(name = "localite_id", referencedColumnName = "id")
 
@@ -93,7 +93,7 @@ class Bien
   private $localite;
       /**
 
-   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Typebien")
+   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Typebien" ,inversedBy="bien" )
 
    * @ORM\JoinColumn(name = "typebien_id", referencedColumnName = "id")
 
@@ -435,9 +435,11 @@ class Bien
     {
         return $this->reservations;
     }
-    //  public function __toString()
-    // {
-    //     return $this->nombien;
-    // }
+      public function __toString()
+     {
+         return $this->nombien;
+    }
+
+
+
 }
- 

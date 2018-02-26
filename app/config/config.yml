@@ -10,7 +10,7 @@ parameters:
 
 framework:
     # esi: ~
-    # translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -80,4 +80,20 @@ assetic:
 
 easy_admin:
     entities:
-        - AppBundle\Entity\User
+        - AK\ImmobilierBundle\Entity\Client
+        - AK\ImmobilierBundle\Entity\Localite
+        - AK\ImmobilierBundle\Entity\Bien
+        - AK\ImmobilierBundle\Entity\Image
+        - AK\ImmobilierBundle\Entity\Proprietaire
+        - AK\ImmobilierBundle\Entity\Reservation
+        - AK\ImmobilierBundle\Entity\Typebien
+        - AK\ImmobilierBundle\Entity\Contrat
+        - AK\ImmobilierBundle\Entity\Paiement
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: "dialloquinz@gmail.com"
+        sender_name: "Mariama Diallo"

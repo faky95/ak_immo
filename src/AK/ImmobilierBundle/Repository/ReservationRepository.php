@@ -10,4 +10,21 @@ namespace AK\ImmobilierBundle\Repository;
  */
 class ReservationRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    // public function findReservationByValues($bien, $client){
+
+    //     $query = $this->getEntityManager()->createQuery(
+    //             'SELECT b FROM AKImmobilierBundle:Reservation r
+    //                 WHERE
+    //                 r.bien in (SELECT b.id FROM AKImmobilierBundle:Bien b WHERE b.nombien like :bien )
+    //                 AND
+    //                 r.client in (SELECT c.id FROM AKImmobilierBundle:Client c WHERE c.nom like :client )'
+    //     )->setParameter(
+    //         'bien', $bien
+    //     )->setParameter(
+    //         'client', $client
+    //     );
+
+    //     return $query->execute();
+    // }
 }

@@ -1,6 +1,6 @@
 ak_immobilier:
     resource: "@AKImmobilierBundle/Resources/config/routing.yml"
-    prefix:   
+    prefix:
 
 app:
     resource: '@AppBundle/Controller/'
@@ -10,3 +10,6 @@ easy_admin_bundle:
     resource: "@EasyAdminBundle/Controller/AdminController.php"
     type:     annotation
     prefix:   /admin
+    
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

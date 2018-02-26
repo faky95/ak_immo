@@ -43,7 +43,7 @@ class Paiement
     private $periode;
        /**
 
-   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Contrat")
+   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Contrat",inversedBy="paiements" )
 
    * @ORM\JoinColumn(name = "id_contrat", referencedColumnName = "id")
 

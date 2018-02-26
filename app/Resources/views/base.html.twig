@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         {% block title %}
@@ -12,7 +12,6 @@
 
         {% block stylesheet %}
         <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
@@ -141,12 +140,7 @@
         </footer>
         {% block javascript %}
         <!-- Javascript -->
-<<<<<<< HEAD
-        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
-=======
-        <script type="text/javascript" src="{{asset('http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js')}}"></script> 
-        <script type="text/javascript" src="{{asset('js/akimmo.js')}}"></script> 
->>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="></script>
         <script src="{{asset('assets/js/jquery-1.8.2.min.js')}}"></script>
         <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('assets/js/jquery.flexslider.js')}}"></script>
