@@ -1,0 +1,53 @@
+ak_immobilier_homepage:
+
+    path:     /front
+    defaults: { _controller: AKImmobilierBundle:Front:viewBien }
+
+
+reserver:
+    path:     /front/reserver/{id}
+    defaults: { _controller: AKImmobilierBundle:Front:reserver }
+    requirements:
+        id: \d+
+
+searchBien:
+
+    path:     /front/searchBien
+    defaults: { _controller: AKImmobilierBundle:Front:searchBien }
+
+insertBien:
+
+    path:     /front/insertbien
+    defaults: { _controller: AKImmobilierBundle:Front:insertBien }
+
+
+
+# etat:
+#     path:     /front/{id}
+#     defaults: { _controller: AKImmobilierBundle:Front:etatBien }
+#     requirements:
+#         id: \d+
+#     path:     /
+#     defaults: { _controller: AKImmobilierBundle:Default:index }
+
+list:
+
+    path:     /front/list
+    defaults: { _controller: AKImmobilierBundle:Front:insertBien }
+
+localite:
+
+    path:     /front/localite
+    defaults: { _controller: AKImmobilierBundle:Front:insertBien }
+
+listereservation:
+    path:     /front/bien/reservation
+    defaults: { _controller: AKImmobilierBundle:Front:listeReservation }
+
+
+details:
+    path:     /front/bien/details
+    defaults: { _controller: AKImmobilierBundle:Front:detailsReservation }
+   
+
+
