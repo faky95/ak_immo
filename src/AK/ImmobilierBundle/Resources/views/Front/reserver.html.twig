@@ -1,4 +1,4 @@
-{% extends "::base.html.twig" %}
+{# {% extends "::base.html.twig" %} #}
 
 {# {% block style %}
      <style>
@@ -9,7 +9,49 @@
 {% endblock %} #}
 {% block body %}
 {{form(form)}} 
-{% block main %}
+ {% block main %} 
+  <form method="post" action="">
+                        <label for="name" class="nameLabel">Username</label>
+                          <input id="name" type="text" name="login" placeholder="Enter your username...">
+                       
+                         <label for="subject">Password</label>
+                          <input id="password" type="password" name="password" placeholder="Your password...">
+                        
+                         <button type="submit" name="connecter">connecter</button>
+  </form>
+
+  <div class="row" >
+
+    
+        
+        <ul class="portfolio-img " style="heigth:50px;">
+        {% for bien in biens %}
+              
+            <li data-id="" data-type="web-design" class="span3">
+                <ul>
+                    {% for image in bien.images %}
+                        <li>
+                        <img src="{{asset('assets/img/photo/'~image.image)}}"class="img">
+                        </li>
+                    {% endfor %}
+                    <li>{{bien.typebien}}</li>
+                    <li>{{bien.nombien}}</li>
+                    <li>{{bien.prixlocation }} FCFA</li>
+                    <li>{{bien.localite }}</li>
+                </ul>
+                  <div class="icon-awesome">
+                    {% for image in bien.images %}
+                        <a href="{{asset('assets/img/photo/'~image.image)}}" rel="prettyPhoto"><i class="icon-search"></i></a>
+                        <a class="pp_close" href="#">Close</a>
+                         {% endfor %}
+                    </div>
+                <a href="{{path('reserver', {'id':bien.id})}}"><button><span class="violet">RESERVER</span></button></a>
+            </li> 
+            {# </div>
+            </div> #}
+        {% endfor %} 
+        </ul>
+    </div> 
 {#
 <div class="contact-us container">
             <div class="row">
@@ -51,5 +93,5 @@
                 </div>
             </div> #}
 {# </div>      #}
-{% endblock %}
+ {% endblock %} 
 {% endblock %} 

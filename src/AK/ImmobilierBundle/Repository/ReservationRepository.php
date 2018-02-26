@@ -10,4 +10,32 @@ namespace AK\ImmobilierBundle\Repository;
  */
 class ReservationRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getClient()
+    {
+        $em=$this->getEntityManager()->createQueryBuilder();
+        $dql=$em->select('r','c')
+        ->from('AKImmoblierBundle:Reservation','r')
+        ->leftJoin('r.client','c')
+        ->where('r.client = c.nom')
+        ->andwhere('r.client=c.adresse')
+        //->setParameter()
+        ->getQuery();
+        return $dql->getResult();
+
+    }
+    public function getBien()
+    {
+        $em=$this->getEntityManager()->createQueryBuilder();
+        $dql=$em->select('r','b')
+        ->from('AKImmoblierBundle:Reservation','r')
+        ->leftJoin('r.bien','b')
+        ->where('r.bien = b.nombien')
+        ->andwhere('r.bien=b.localite')
+        ->andwhere('r.bien=b.typebien')
+        ->andwhere('r.bien=b.prixlocation')
+        ->andwhere('r.bien=b.image')
+        //->setParameter()
+        ->getQuery();
+        return $dql->getResult();
+    }
 }

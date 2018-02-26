@@ -19,6 +19,10 @@ class AppKernel extends Kernel
             new AK\ImmobilierBundle\AKImmobilierBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+
+		
 
         ];
 

@@ -51,13 +51,13 @@ class Bien
      // …
        /**
 
-   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Bien", mappedBy = "contrat")
+   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Contrat", mappedBy = "bien")
    */
 
   private $contrats;
         /**
 
-   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Bien", mappedBy = "client")
+   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Client", mappedBy = "bien")
    */
 
   private $clients;
@@ -66,7 +66,7 @@ class Bien
   // …
        /**
 
-   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Bien", mappedBy = "reservation")
+   * @ORM\OneToMany(targetEntity = "AK\ImmobilierBundle\Entity\Reservation", mappedBy = "bien")
    */
 
   private $reservations;
@@ -75,7 +75,7 @@ class Bien
   // …
        /**
 
-   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Bien")
+   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Bien", inversedBy="biens")
 
    * @ORM\JoinColumn(name = "id_parentbien", referencedColumnName = "id")
  
@@ -84,16 +84,16 @@ class Bien
   
       /**
 
-   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Localite")
+   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Localite", inversedBy="biens")
 
-   * @ORM\JoinColumn(name = "localite_id", referencedColumnName = "id")
+   * @ORM\JoinColumn(name = "localite_id", referencedColumnName = "id", nullable=true)
 
    */
 
   private $localite;
       /**
 
-   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Typebien")
+   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Typebien", inversedBy="biens")
 
    * @ORM\JoinColumn(name = "typebien_id", referencedColumnName = "id")
 

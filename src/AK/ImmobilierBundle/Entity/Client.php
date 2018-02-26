@@ -2,6 +2,7 @@
 
 namespace AK\ImmobilierBundle\Entity;
 
+//use FOS\UserBundle\Model\Client as FosUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="client")
  * @ORM\Entity(repositoryClass="AK\ImmobilierBundle\Repository\ClientRepository")
  */
-class Client
+class Client     
 {
     /**
      * @var int
@@ -341,5 +342,9 @@ class Client
     public function getContrats()
     {
         return $this->contrats;
+    }
+    public function __toString()
+    {
+        return $this->nom;
     }
 }

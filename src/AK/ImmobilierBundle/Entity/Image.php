@@ -29,7 +29,7 @@ class Image
     private $image;
       /**
 
-   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Bien")
+   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Bien", inversedBy="images")
 
    * @ORM\JoinColumn(name = "bien_id", referencedColumnName = "id")
 
@@ -98,5 +98,6 @@ class Image
     {
         return $this->bien;
     }
+   
   
 }

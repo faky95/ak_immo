@@ -1,6 +1,8 @@
-
-$(document).ready(function()
+$(document).ready(function(){
+    //alert('ok');
+   // $('#table').dataTable();
+    $('.list').on('click',function()
 {
-   
-    $('#table').DataTable();
+    $('#aside').load('{{path("listLocalite")}}');
+});
 });

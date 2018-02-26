@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        {% block title %}
+        <title>AJAX</title>
+        {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        {% block stylesheet %}
+        <!-- CSS -->
+       
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
+        <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/prettyPhoto/css/prettyPhoto.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/flexslider.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/font-awesome.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('stylemain.css')}}">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="{{asset('assets/ico/favicon.ico')}}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('assets/ico/apple-touch-icon-144-precomposed.png')}}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset('assets/ico/apple-touch-icon-114-precomposed.png')}}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('assets/ico/apple-touch-icon-72-precomposed.png')}}">
+        <link rel="apple-touch-icon-precomposed" href="{{asset('assets/ico/apple-touch-icon-57-precomposed.png')}}">
+        {% endblock %}
+        <script>
+            {% block script %}
+            {% endblock %}
+        </script>
+
+        <style>
+            {% block styles %}
+            {% endblock %}
+        </style>
+    </head>
+    <body>
+    {% block body %}
+        <header>
+            {# {% block header %}
+          
+    <!-- Header -->
+    <div class="container">
+        <div class="header row">
+           
+            {# <div class="span12">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <h1>
+                            <span class="violet">AK1/2 IMMO </span>
+                            <span class="slogan"> trouver votre futur logement</span>
+                        </h1>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right">
+                                <li class="current-page">
+                                    <a href="{{ path('ak_immobilier_homepage') }}"><i class="icon-home"></i><br />ACCUEIL</a>
+                                 </li>
+                                 <li>
+                                    <a href=""><i class="icon-camera"></i><br />Portfolio</a>
+                                </li> 
+                                {# <li>
+                                    <a href="{{asset('services.html')}}"><i class="icon-tasks"></i><br />RESERVATION</a>
+                                </li> #}
+                 
+{# {% endblock %} #} 
+        </header>
+        <div class="main">
+            {% block main %}
+                   
+                    {% block aside %}
+                    
+                    {% endblock %}
+                    
+                    {% block article %}
+                      
+                    {% endblock %}
+            {% endblock %}
+        </div>
+       {% block plus %}
+    {% endblock %} 
+        <footer id="footer">
+        {% block footer %}
+            <div class="container"i_,>
+                <div class="row" style="background-color:lightgray">
+                    <div class="widget span3">
+                        <h4>Address</h4>
+                        <p>Centre ville Rue 3 Berranger Ferraud (Dakar/Senegal)<p><a href="">Read more...</a></p>
+                    </div>
+                    {# <div class="widget span3">
+                        <h4>Latest Tweets</h4>
+                        <div class="show-tweets"></div>
+                    </div> #}
+                    <div class="widget span4">
+                         <h4>Nos Partenaires</h4>
+                        <ul class="flickr">
+                           <li>
+                           <img src="{{asset('assets/img/photo/25.png')}}" style="height:50px">&nbsp;&nbsp;
+                           <img src="{{asset('assets/img/photo/6.png')}}" style="height:50px">&nbsp;&nbsp;
+                           <img src="{{asset('assets/img/photo/9.jpeg')}}" style="height:50px">
+                           </li>
+                        </ul>
+                    </div> 
+                    <div class="widget span3">
+                        <h4>Contacter Nous</h4>
+                        <p><i class="icon-map-marker"></i> Address: Centre ville Rue 3 Berranger Ferraud (Dakar/Senegal)</p>
+                        <p><i class="icon-phone"></i> Phone: 77 147 33 49</p>
+                        <p><i class="icon-user"></i> Skype: Ak_immo</p>
+                        <p><i class="icon-envelope-alt"></i> Email: <a href="">contact@akimmo.co.uk</a></p>
+                    </div>
+                </div>
+                <div class="footer-border"></div>
+                <div class="row">
+                    <div class="copyright span4">
+                        <p>Copyright 2017 Ak1/2 Immo - All rights reserved. Location by <a href="http://azmind.com">AKIMMO</a>.</p>
+                    </div>
+                    <div class="social span8">
+                        <a class="facebook" href=""></a>
+                        <a class="dribbble" href=""></a>
+                        <a class="twitter" href=""></a>
+                        <a class="pinterest" href=""></a>
+                    </div>
+                </div>
+             </div>
+            </div>
+        {% endblock %}
+        </footer>
+        {% block javascript %}
+        <!-- Javascript -->
+      
+        <script src="{{asset('js/jquery3.js')}}"></script>
+        <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('assets/js/jquery.flexslider.js')}}"></script>
+        <script src="{{asset('assets/js/jquery.tweet.js')}}"></script>
+        <script src="{{asset('assets/js/jflickrfeed.js')}}"></script>
+        {# <script src="http://maps.google.com/maps/api/js?sensor=true"></script> #}
+        <script src="{{asset('assets/js/jquery.ui.map.min.js')}}"></script>
+        <script src="{{asset('assets/js/jquery.quicksand.js')}}"></script>
+        <script src="{{asset('assets/prettyPhoto/js/jquery.prettyPhoto.js')}}"></script>
+        {# <script src="{{asset('assets/js/scripts.js')}}"></script> #}
+         {# <script type="text/javascript" src="{{ asset('jsakimo/akimo.js') }}"></script> #}
+        {% endblock %}
+    {% endblock %}
+    </body>
+ 
+
+</html>
+
+
+
+

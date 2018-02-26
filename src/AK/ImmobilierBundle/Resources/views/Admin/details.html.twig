@@ -1,0 +1,66 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Détail-location{% endblock %}
+{% block body %}
+
+
+  <h4 style="font-family:Goudy Old style; color:black;"><center><i> Information Client</i></center></h4>
+  </div>
+  
+  <div class="card-body">
+  
+
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> Nom du Client : {{ reservations.Client.nom }}  </p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> Numero piece  : {{ reservations.Client.numpiece }}</p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> Adresse   : {{ reservations.Client.adresse }} </p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> Telephone  :{{ reservations.Client.login }} </p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;">Login:{{reservations.Client.phone}}</p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;">Email :{{  reservations.Client.email}}</p></i><br>
+  </div>
+
+   
+  
+  
+ 
+  
+  
+  </div>
+ <div class="col-lg-6">
+<div class="card" style=" height:400px;">
+  <div class="card-header" style="background:lightgrey;opacity:0.5">
+  <h4 style="font-family:Goudy Old style; color:black;"><center><i>  Information Bien</i></center></h4>
+  </div>
+  <div class="card-body">
+    
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;">Nom du Bien : {{ reservations.Bien.nombien }}</p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;">Type de Bien : {{ reservations.Bien.Typebien.libelle }}</p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;">Localite : {{reservations.Bien.Localite.nomlocalite }}</p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;">Description : {{ reservations.Bien.description}}</p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;">Prix-Location :{{reservations.Bien.prixlocation}}</p></i><br>
+  </div>
+  
+</div>
+
+
+</div>
+</div>
+<div class="row" style="margin-bottom:20px;">
+  {% for image in reservations.bien.images %}
+                        
+             <img src="{{asset('assets/img/photo/'~image.image)}}"class="img">
+                       
+         {% endfor %}
+
+
+
+<div class="row" style="margin-bottom:30px;">
+<div class="col-lg-4" ></div>
+<div class="col-lg-2" >
+<a href="{{path('reserve')}}">
+<input type="submit" value="Retour" class="btn btn-primary" style="width:150px;">
+</a>
+<input type="submit" value="Valider" class="btn btn-primary" style="width:150px;"></div>
+
+</div>
+</div> 
+{% endblock %}

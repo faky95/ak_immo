@@ -36,7 +36,7 @@ class Reservation
     private $etat;
       /**
 
-   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Client")
+   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Client" , inversedBy="reservations")
 
    * @ORM\JoinColumn(name = "idclient", referencedColumnName = "id")
 
@@ -45,7 +45,7 @@ class Reservation
   private $client;
       /**
 
-   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Bien")
+   * @ORM\ManyToOne(targetEntity="AK\ImmobilierBundle\Entity\Bien" , inversedBy="reservations")
 
    * @ORM\JoinColumn(name = "idbien", referencedColumnName = "id")
 

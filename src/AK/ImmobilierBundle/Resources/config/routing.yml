@@ -1,35 +1,35 @@
-ak_immobilier_homepage:
+viewBien:
 
     path:     /front
     defaults: { _controller: AKImmobilierBundle:Front:viewBien }
 
-<<<<<<< HEAD
-search:
-    path:     /front/search
-    defaults: { _controller: AKImmobilierBundle:Front:searchBien }
+# search:
+#     path:     /front/search
+#     defaults: { _controller: AKImmobilierBundle:Front:searchBien }
 
-reservateBien:
-    path:     /front/reserver
-    defaults: { _controller: AKImmobilierBundle:Front:reservateBien }         
 
-=======
+# listBien:
+#     path:     /front/listbien
+#     defaults: { _controller: AKImmobilierBundle:Front:listBien } 
+
+
+
+# listLocalite:
+#     path:     /front/listlocalite
+#     defaults: { _controller: AKImmobilierBundle:Front:listLocalite}   
+
+
+
+# listType:
+#     path:     /front/listtype
+#     defaults: { _controller: AKImmobilierBundle:Front:listType }              
 
 reserver:
     path:     /front/reserver/{id}
-    defaults: { _controller: AKImmobilierBundle:Front:reserver }
+    defaults: { _controller: AKImmobilierBundle:Front:reserver }   
     requirements:
-        id: \d+
-    
-searchBien:
+        id: \d+      
 
-    path:     /front/searchBien
-    defaults: { _controller: AKImmobilierBundle:Front:searchBien }
-
-insertBien:
-
-    path:     /front/insertbien
-    defaults: { _controller: AKImmobilierBundle:Front:insertBien }    
->>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
   
 
 
@@ -46,3 +46,14 @@ insertBien:
 
 
     
+
+reserve:
+    path:     /reserve
+    defaults: { _controller: AKImmobilierBundle:Admin:reserveView }
+
+
+detail:
+    path:     /front/detail/{id}
+    defaults: { _controller: AKImmobilierBundle:Admin:detail }        
+    requirements:
+        id: \d+

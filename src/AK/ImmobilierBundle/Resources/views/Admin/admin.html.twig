@@ -1,0 +1,51 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AKImmobilierBundle:Admin:admin{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Admin </h1>
+
+<table border="2    ">
+<tr>
+<th>Id</th>
+<th>Nom Client</th>
+ <th>Adresse Client</th>
+<th>Nom Bien</th>
+<th>Localite Bien</th>
+<th>Type Bien</th>
+<th>Prix Location</th>
+ <th>Image</th>
+<th>Details</th>  
+</tr>
+{% for reservation in reservations %}
+<tr>
+    <td>{{reservation.id}}</td>
+    <td>{{reservation.client}}</td>
+    <td>{{reservation.client.adresse}}</td>
+    <td>{{reservation.bien.nombien}}</td>
+    <td>{{reservation.bien.localite}}</td>
+    <td>{{reservation.bien.typebien}}</td>
+    <td>{{reservation.bien.prixlocation}}</td>
+    <td>   
+        {% for image in reservation.bien.images %}
+                        
+             <img src="{{asset('assets/img/photo/'~image.image)}}"class="img">
+                       
+         {% endfor %}</td>
+    <td>
+        <a href="{{path('detail', {'id':reservation.id})}}">Details </a>
+    </td>
+    {# <td>{{reservation.id}}</td>
+    <td>{{reservation.id}}</td>
+    <td>{{reservation.id}}</td> #}
+
+</tr>
+{% endfor %}
+</table>
+<style>
+.img
+{
+    width:100px;
+}
+</style>
+{% endblock %}

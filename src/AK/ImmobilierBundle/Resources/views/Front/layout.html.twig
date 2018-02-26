@@ -36,41 +36,38 @@
 {% endblock %}
 {% block main %}
     <!-- Slider -->
-    {% block slide %}
-    <div class="slider">
-        <div class="container">
-            <div class="row">
-                <div class="span10 offset1">
-                    <div class="flexslider">
-                        <ul class="slides">
-                            {# <li data-thumb="{{asset('assets/img/photo/01.jpg')}}" style="height:0px">
-                                <img src="{{asset('assets/img/photo/01.jpg')}}" style="height:550px">
-                                <p class="flex-caption">Maison meuble avec 2 chambres ,une cuisine, un salon, un bureau, une piscine et un jardin en Rez de chaussée.Quatre chambre avec salle de bain un salon de the, deux toilettes publiques.</p>
-                            </li> #}
-                             <li data-thumb="{{asset('assets/img/photo/maison.jpg')}}" style="height:0px">
-                                <img src="{{asset('assets/img/photo/maison.jpg')}}" style="height:550px">
-                                <p class="flex-caption">Maison meublée avec 2 chambres ,une cuisine, un salon, un bureau, une piscine et un jardin en Rez de chaussée.Quatre chambre avec salle de bain un salon de the, deux toilettes publiques.</p>
-                            </li>
-                            <li data-thumb="{{asset('assets/img/photo/02.jpg')}}">
-                                <img src="{{asset('assets/img/photo/02.jpg')}}" style="height:550px">
-                                {# <p class="flex-caption">Studio avec une chambreavec salle de bain , un salon, une cuisine</p> #}
-                            </li>
-                            <li data-thumb="{{asset('assets/img/photo/03.jpg')}}">
-                                <img src="{{asset('assets/img/photo/03.jpg')}}" style="height:550px">
-                                <p class="flex-caption">Studio avec une chambreavec salle de bain , un salon, une cuisine.</p>
-                            </li>
-                            <li data-thumb="{{asset('assets/img/photo/07.jpg')}}">
-                                <img src="{{asset('assets/img/photo/07.jpg')}}" style="height:550px">
-                                <p class="flex-caption">Studio avec une chambreavec salle de bain , un salon, une cuisine</p>
-                            </li>
-                        </ul>
+    {# {% block slide %} #}
+       <!-- Slider -->
+        <div class="slider">
+            <div class="container">
+                <div class="row">
+                    <div class="span10 offset1">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li data-thumb="assets/img/photo/1.jpg">
+                                    <img src="assets/img/photo/1.jpg">
+                                    <p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur.</p>
+                                </li>
+                                <li data-thumb="assets/img/photo/2.jpg">
+                                    <img src="assets/img/photo/2.jpg">
+                                    <p class="flex-caption">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                                </li>
+                                <li data-thumb="assets/img/photo/5.jpg">
+                                    <img src="assets/img/photo/5.jpg">
+                                    <p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur.</p>
+                                </li>
+                                <li data-thumb="assets/img/photo/6.jpg">
+                                    <img src="assets/img/photo/6.jpg">
+                                    <p class="flex-caption">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    {% endblock %}
+    {# {% endblock %} #}
 
     <!-- Site Description -->
     <div class="presentation container">
@@ -89,52 +86,37 @@
 
           <div class="g-bg-white g-pa-30"style="margin-top:50px;">
             <!-- Input Group -->
-<<<<<<< HEAD
-            <form method="post" action="{{path('search')}}"> 
+            <form method="post" action=""> 
             <div class="row" style="display:flex;margin-left:200px">
                 <div class="col-lg-3">
-                    <select>
-                        <option value=""> Choisir le Type Bien </option>
+                     <select name="typebien">
+                        <option value=""> Choisir le Type Bien </option> 
                         {% for type in types %}
-                            <option value="" name="typebien"> {{type.libelle}} </option>
+                         
+                            <option value="{{type.id}}" > {{type.libelle}} </option>
                         {% endfor %}
+                    </select>  
+                </div>
+                <div class="col-lg-3 "style="margin-left:30px;">
+                      <select name="localite">
+                        <option value=""> Choisir la localite </option> 
+                        {% for localite in localites %}
+                         
+                            <option value="{{localite.id}}" > {{localite.nomlocalite}} </option>
+                        {% endfor %}
+                        
                     </select> 
-                </div>
-                <div class="col-lg-3 "style="margin-left:30px;">
-                     <select>
-                        <option value="" > Choisir la localite </option>
-                        {% for localite in localites %}
-                            <option value="" name="localite"> {{localite.nomlocalite}} </option>
-                        {% endfor %}
-                        
-=======
-            <form method="post" action="{{path('searchBien')}}" > 
-            <div class="row" style="display:flex;margin-left:200px">
-                <div class="col-lg-3">
-                    <select>
-                        <option value="" > Choisir la localite </option>
-                        {% for localite in localites %}
-                            <option value="" name="localite"> {{localite.nomlocalite}} </option>
-                        {% endfor %}
-                        
-                    </select>
-                </div>
-                <div class="col-lg-3 "style="margin-left:30px;">
-                    <select>
-                        <option value=""> Choisir le Type Bien </option>
-                        {% for type in types %}
-                            <option value="" name="typebien"> {{type.libelle}} </option>
-                        {% endfor %}
->>>>>>> 18c4eeb6907d4175d04795bcc8b605fb449d141b
-                    </select>
                 </div>  
                 <div class="col-lg-3" style="margin-left:30px;">
-                     <input name="prixlocation"class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="prix">
+                     <input name="prixmin"class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="prixMin">
+                </div>
+                <div class="col-lg-3" style="margin-left:30px;">
+                     <input name="prixmax"class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="prixMax   ">
                 </div>
                 <div class="col-lg-3 bg-primary"style="margin-left:30px;">
-                    
+                   <a href="{{path('viewBien')}}">
                      <input name="search"value="SEARCH"  style="width:100px; height:30px; margin-bottom:12px" type="submit">
-                 
+                    </a>
                 </div>
             </div>
        
@@ -143,7 +125,45 @@
           </div>
     {% block plus %}
     {% endblock %}
-    <div class="col-lg-12">
+    <div class="row" >
+
+    
+        
+        <ul class="portfolio-img " style="heigth:50px;">
+        {% for bien in biens %}
+            {# <div class="card text-white bg-primary col-lg-4">
+              {# <img class="card-img-top" src="holder.js/100px180/" alt=""> #}
+              {# <div class="card-body">  #}
+              
+            <li data-id="" data-type="web-design" class="span3">
+                <ul>
+                    {% for image in bien.images %}
+                        <li>
+                        <img src="{{asset('assets/img/photo/'~image.image)}}"class="img">
+                        </li>
+                    {% endfor %}
+                    <li>{{bien.typebien}}</li>
+                    <li>{{bien.nombien}}</li>
+                    <li>{{bien.prixlocation }} FCFA</li>
+                    <li>{{bien.localite }}</li>
+                </ul>
+                  <div class="icon-awesome">
+                    {% for image in bien.images %}
+                        <a href="{{asset('assets/img/photo/'~image.image)}}" rel="prettyPhoto"><i class="icon-search"></i></a>
+                        <a class="pp_close" href="#">Close</a>
+                         {% endfor %}
+                    </div>
+                <a href="{{path('reserver', {'id':bien.id})}}"><button><span class="violet">RESERVER</span></button></a>
+            </li> 
+            {# </div>
+            </div> #}
+        {% endfor %} 
+        </ul>
+    </div> 
+    
+    {# <div class="text-center">{{ knp_pagination_render(biens) }}</div> #}
+
+    {# <div class="col-lg-12">
         <ul style="display: flex;">
         {% for bien in biens %}
             <div class="card text-white bg-primary">
@@ -167,32 +187,7 @@
             </div>
         {% endfor %}
         </ul>
-    </div> 
-    <div class="col-lg-12">
-        <ul style="display: flex;">
-        {% for bien in biens %}
-            <div class="card text-white bg-primary">
-              <img class="card-img-top" src="holder.js/100px180/" alt="">
-              <div class="card-body">
-              
-            <li>
-                <ul>
-                    {% for image in bien.images %}
-                        <li>
-                        <img src="{{asset('assets/img/photo/'~image.image)}}"class="img">
-                        </li>
-                    {% endfor %}
-                    <li>{{bien.typebien}}</li>
-                    <li>{{bien.nombien}}</li>
-                    <li>{{bien.prixlocation }}</li>
-                </ul>
-                <a href="{{path('reserver', {'id':bien.id})}}"><button><span class="violet">RESERVER</span></button></a>
-            </li>
-            </div>
-            </div>
-        {% endfor %}
-        </ul>
-    </div> 
+    </div>  #}
 {# <thead>
 <tr>
 <th>nom</th>

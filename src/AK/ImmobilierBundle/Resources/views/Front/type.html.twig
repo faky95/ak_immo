@@ -1,17 +1,73 @@
-    <select>
-        {% for type in types %}
-            <option value=""> {{type.libelle}} </option>
-        {% endfor %}
-    </select> 
 
-                     {# {% extends "::base.html.twig" %}
 
-{% block title %}Formulaire{% endblock %}
+{% extends "::layout1.html.twig" %}
+   {% block stylesheet %}
+   {{ parent () }}
+   <link rel="stylesheet" href="{{asset('DataTables/datatables.css')}}">
+   {% endblock %}
+ 
+{% block aside %}
+<div class="container">
+<h1 style="text-align:center;margin-top:10px;"> Voici la liste des Types </h1>
+<div class="col-12 ">
 
-{% block body %}
-<h1 style="text-align:center;">Form</h1>
-<from>
-{{form(form)}}
-</form>
+<table id="table" >
+<tr>
+<th>id</th>
+<th>nom type</th>
 
-{% endblock %} #}
+{#   #}
+{# <th>localite</th>
+<th>type</th>
+<th>Image</th> #}
+
+</tr>
+{%for type in types %}
+<tr>
+
+<td>{{type.id}}</td>
+<td>{{type.libelle }}</td>
+{# <td>{{bien.description}}</td> #}
+{# <td>{{bien.localite}}</td>
+<td>{{bien.typebien}}</td> #}
+ {# <td>
+    
+ {% for image in bien.images %}
+ {# {{image.image}} #}
+   {# <img src="{{asset('assets/img/photo/'~image.image)}}"class="img">
+
+{% endfor %}
+
+ </td>   #}
+ {# <td>
+ <a href="{{path('reserver',{'id':bien.id})}}">RESERVER</a>
+ </td>
+  <style>
+ .img
+ {
+     width:200px;
+ }
+ </style> #}
+
+
+</tr>
+
+
+{%endfor%}
+</table>
+</div>
+
+</div>
+
+
+{% endblock %}
+{% block javascript %}
+ {{ parent () }}
+     <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+     <script type="text/javascript" src="{{ asset('jsakimo/akimo.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+       <script type="text/javascript" src="{{ asset('DataTables/datatables.js') }}"></script>
+     
+{% endblock %}
+
+
